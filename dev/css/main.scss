@@ -1,0 +1,36 @@
+$primary: #006699;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+header {
+	background-color: black;
+	color: white;
+	padding-left: 2%;
+}
+
+body {
+	background-color: navy;
+}
+
+h2 {
+	color: $primary;
+}
+
+.mainView {
+	background-color: lightblue;
+}
+
+.wordList {
+	color: gray;
+}
+
+#top-padding {
+	background-color: lightblue;
+}

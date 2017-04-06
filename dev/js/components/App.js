@@ -1,15 +1,28 @@
 import React from 'react';
-//require('../../css/style.css');
+import WordList from '../containers/word-list';
+import WordDetail from '../containers/word-detail'
+require('../../css/main.scss');
 
 const App = () => (
     <div>
-    	<h1>Welcome To Yugur.io</h1>
-    	<hr/>
-    	<hr/>
-    	<br/><br/>
-    	<h2>Word Entries:</h2>
-    	<hr/>
-    	<h2>Word Details:</h2>
+      <header>
+        <br/>
+    	  <h1>Welcome To Yugur.io</h1>
+        <br/>
+      </header>
+      <section className={'mainView'}>
+      	<hr/>
+      	<hr/>
+      	<br/>
+      	<h2 className={'heading'}>Word Entries:</h2>
+      	<WordList className={'wordEntry'}></WordList>
+        <br/>
+      	<hr/>
+        <br/>
+      	<h2>Word Details:</h2>
+        <WordDetail></WordDetail>
+        <br/>
+      </section>
     </div>
 );
 
