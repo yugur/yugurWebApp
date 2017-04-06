@@ -16,15 +16,20 @@ header {
 }
 
 body {
-	background-color: navy;
+	background-color: lightblue;
 }
 
 h2 {
 	color: $primary;
 }
 
+.app {
+	height: 100%;
+}
+
 .mainView {
 	background-color: lightblue;
+	height: 100%;
 }
 
 .wordList {
