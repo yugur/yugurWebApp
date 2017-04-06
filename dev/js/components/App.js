@@ -4,7 +4,7 @@ import WordDetail from '../containers/word-detail'
 require('../../css/main.scss');
 
 const App = () => (
-    <div>
+    <div className={'app'}>
       <header>
         <br/>
     	  <h1>Welcome To Yugur.io</h1>
