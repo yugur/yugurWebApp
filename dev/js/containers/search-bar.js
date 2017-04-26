@@ -10,8 +10,8 @@ class SearchBar extends Component {
       <div id="search">
 
 
-      	<form enctypr="text/plain">
-      		<ul>
+        <form enctypr="text/plain">
+          <ul>
             <li>Words</li>
             <li>Semantics</li>
             <li>Alphabets</li>
@@ -23,12 +23,12 @@ class SearchBar extends Component {
             </select>
 
             </li>
-      			<li>
-      				<input type="text" name="search_word" placeholder="Search" size="48" maxlength="200">
-      			  </input>
-      		  </li>
-      		 <li><button type="button">Go</button></li>
-      	 </ul>
+            <li>
+              <input type="text" name="search_word" placeholder="Search" size="48" maxlength="200">
+              </input>
+            </li>
+           <li><button type="button">Go</button></li>
+         </ul>
         </form>
 
       </div>
@@ -37,13 +37,12 @@ class SearchBar extends Component {
 }
 
 {/*function mapDispatchToProps(dispatch) {
-	return bindActionCreators(null, dispatch)
+  return bindActionCreators(null, dispatch)
 }
-
 function mapStateToProps(state) {
-	return {
-		wordEntries: state.wordEntries
-	};
+  return {
+    wordEntries: state.wordEntries
+  };
 }*/}
 
 export default SearchBar;

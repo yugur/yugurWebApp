@@ -14,26 +14,26 @@ const App = () => (
       {/*Banner*/}
       <header>
         <br/>
-    	   <h1>Welcome To Yugur.io</h1>
+         <h1>Welcome To Yugur.io</h1>
         <br/>
       </header>
 
       {/*Main content*/}
       <section className={'mainView'}>
-      	<hr/>
+        <hr/>
 
         <SearchBar></SearchBar>
-      	<hr/>
-      	<br/>
+        <hr/>
+        <br/>
 
         <div className={'selections'}>
-      	<h2 className={'heading'}>Word Entries:</h2>
-      	<WordList className={'wordEntry'}></WordList>
+        <h2 className={'heading'}>Word Entries:</h2>
+        <WordList className={'wordEntry'}></WordList>
         </div>
 
 
         <div className={'results'}>
-      	<h2>Word Details:</h2>
+        <h2>Word Details:</h2>
         <WordDetail></WordDetail>
         </div>
 
