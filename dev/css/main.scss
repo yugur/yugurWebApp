@@ -10,9 +10,10 @@ html, body {
 }
 
 header {
-	background-color: black;
+	background-color: #be4e4e;
 	color: white;
 	padding-left: 2%;
+	height: 7.5vh
 }
 
 body {
@@ -38,4 +39,26 @@ h2 {
 
 #top-padding {
 	background-color: lightblue;
+}
+
+span {
+	float: left;
+}
+
+searchBar {
+	margin-left: 10vw;
+	vertical-align: center;
+}
+
+headerLogo {
+	margin-right: 10vw
+}
+
+username {
+	text-align: right
+}
+
+authSection {
+	float: right;
+	padding: 10%;
 }
