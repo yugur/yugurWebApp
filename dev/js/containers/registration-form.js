@@ -18,8 +18,7 @@ class RegistrationForm extends Component {
 			console.log('ready state changed')
 		}
 		xhttp.open('POST', url, true)
-		console.log('Warning: Unresolved CORS issue - aborting request..')
-		//xhttp.send(params);
+		xhttp.send(params);
 	}
 
   render() {
