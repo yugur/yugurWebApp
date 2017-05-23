@@ -1,48 +1,62 @@
 import React from 'react';
 import WordList from '../containers/word-list';
-import WordDetail from '../containers/word-detail'
-import SearchBar from '../containers/search-bar.js'
-import ActionMenu from '../containers/action-menu.js'
-{/*import MyImage from '../../images/placeholder.png';*/}
-{/*import Img from '../../images/placeholder.png'*/}
-
+import WordDetail from '../containers/word-detail';
+import SearchBar from '../containers/search-bar';
+import RegistrationForm from '../containers/registration-form';
+import LoginForm from '../containers/login-form';
 require('../../css/main.scss');
 
 const App = () => (
     <div className={'app'}>
-
-      {/*Banner*/}
       <header>
         <br/>
-         <h1>Welcome To Yugur.io</h1>
+        <div>
+          <span>
+           <h1 className={'headerLogo'}>Yugur.io</h1>
+          </span>
+
+          <span>
+            <SearchBar className={'searchBar'}></SearchBar>
+          </span>
+
+          <span>
+            <h3 className={'username'}>[Username will go here]</h3>
+          </span>
+
+        </div>
         <br/>
       </header>
-
-      {/*Main content*/}
       <section className={'mainView'}>
         <hr/>
-
-        <SearchBar></SearchBar>
         <hr/>
+        <div>
+          <br/>
+          <h2 className={'heading'}>Word Entries:</h2>
+          <WordList className={'wordEntry'}></WordList>
+          <br/>
+          <hr/>
+          <br/>
+          <h2>Word Details:</h2>
+          <WordDetail></WordDetail>
+          <br/>
+        </div>
         <br/>
-
-        <div className={'selections'}>
-        <h2 className={'heading'}>Word Entries:</h2>
-        <WordList className={'wordEntry'}></WordList>
-        </div>
-
-
-        <div className={'results'}>
-        <h2>Word Details:</h2>
-        <WordDetail></WordDetail>
-        </div>
-
-        <div className={'action-block'}>
-        <ActionMenu></ActionMenu>
-        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <hr/>
+        <hr/>
 
         <br/>
-
+        <div>
+          <span className={'authSection'}>
+            <RegistrationForm></RegistrationForm>
+          </span>
+          <span className={'authSection'}>
+            <LoginForm></LoginForm>
+          </span>
+        </div>
       </section>
     </div>
 );

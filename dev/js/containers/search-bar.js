@@ -1,48 +1,43 @@
-import React, {Component} from 'react';
+import React, {Component, Button} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {selectWordEntry} from '../actions/selectWordEntry'
+import {searchDictionary} from '../actions/searchDictionary'
 
 class SearchBar extends Component {
 
+  createListItems() {
+    return(
+      <form>
+        <input type='text'/>
+      </form>
+    );
+  }
+
+  triggerSearch() {
+    console.log('YAY')
+    if(document.getElementById('searchField')) {
+      console.log('ggggg')
+      this.props.searchDictionary(document.getElementById('searchField').value)
+    }
+    return;
+  }
+
   render() {
-    return (
-      <div id="search">
+      let mySearchTrigger = this.triggerSearch.bind(this);
 
-
-        <form enctypr="text/plain">
-          <ul>
-            <li>Words</li>
-            <li>Semantics</li>
-            <li>Alphabets</li>
-            <li>
-            <select name="languages">
-              <option value="yugur">Yugur -> Yugur</option>
-              <option value="english">English -> Yugur</option>
-              <option value="chienese">Chinese -> Yugur</option>
-            </select>
-
-            </li>
-            <li>
-              <input type="text" name="search_word" placeholder="Search" size="48" maxlength="200">
-              </input>
-            </li>
-           <li><button type="button">Go</button></li>
-         </ul>
-        </form>
-
-      </div>
-    )
+      return (
+        <span>
+          <form>
+            <input type='text' id='searchField'/>
+          </form>
+          <button onClick={mySearchTrigger}>Search!</button>
+        </span>
+      )
   }
 }
 
-{/*function mapDispatchToProps(dispatch) {
-  return bindActionCreators(null, dispatch)
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({searchDictionary: searchDictionary}, dispatch)
 }
-function mapStateToProps(state) {
-  return {
-    wordEntries: state.wordEntries
-  };
-}*/}
 
-export default SearchBar;
+export default connect(null, mapDispatchToProps)(SearchBar);
