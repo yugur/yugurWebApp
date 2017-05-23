@@ -14,15 +14,15 @@ const App = () => (
           <span>
     	     <h1 className={'headerLogo'}>Yugur.io</h1>
           </span>
-          {/*
+
           <span>
             <SearchBar className={'searchBar'}></SearchBar>
           </span>
 
           <span>
-            <h3 className={'username'}>UserName</h3>
+            <h3 className={'username'}>[Username will go here]</h3>
           </span>
-          */}
+
         </div>
         <br/>
       </header>

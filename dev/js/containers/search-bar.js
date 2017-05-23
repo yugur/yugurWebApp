@@ -16,18 +16,21 @@ class SearchBar extends Component {
 	triggerSearch() {
 		console.log('YAY')
 		if(document.getElementById('searchField')) {
+			console.log('ggggg')
 			this.props.searchDictionary(document.getElementById('searchField').value)
 		}
 		return;
 	}
 
   render() {
+  		let mySearchTrigger = this.triggerSearch.bind(this);
+
       return (
       	<span>
       		<form>
 						<input type='text' id='searchField'/>
 					</form>
-					<button onClick={this.triggerSearch()}>Search!</button>
+					<button onClick={mySearchTrigger}>Search!</button>
 				</span>
       )
   }
@@ -37,4 +40,4 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators({searchDictionary: searchDictionary}, dispatch)
 }
 
-export default connect(mapDispatchToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);

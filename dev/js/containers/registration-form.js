@@ -8,17 +8,23 @@ class RegistrationForm extends Component {
 		console.log('Registering...')
 		let uname = document.getElementById('username').value
 		let pass = document.getElementById('password').value
-		console.log('Username: '+document.getElementById('username').value)
-		console.log('Password: '+document.getElementById('password').value)
+		console.log(uname)
+		console.log(pass)
 
-		let url = 'http://139.59.118.165:8080/register'
-		let params = 'username='+uname+'&password='+pass
+		let url = 'http://128.199.202.74:8080/register'
+		//let params = 'username='+uname+'&password='+pass
 		let xhttp = new XMLHttpRequest();
+		
+
 		xhttp.onreadystatechange = function() {
 			console.log('ready state changed')
 		}
 		xhttp.open('POST', url, true)
-		xhttp.send(params);
+		xhttp.withCredentials = true
+		xhttp.setRequestHeader('username', uname)
+		xhttp.setRequestHeader('password', pass)
+		console.log(xhttp)
+		xhttp.send();
 	}
 
   render() {

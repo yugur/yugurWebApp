@@ -11,14 +11,28 @@ class LoginForm extends Component {
 		console.log('Username: '+document.getElementById('username').value)
 		console.log('Password: '+document.getElementById('password').value)
 
-		let url = 'http://139.59.118.165:8080/login'
-		let params = 'username='+uname+'&password='+pass
+		let url = 'http://128.199.202.74:8080/login'
+		//let params = 'username='+uname+'&password='+pass
 		let xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			console.log('ready state changed')
 		}
 		xhttp.open('POST', url, true)
-		xhttp.send(params);
+		xhttp.withCredentials = true
+		xhttp.setRequestHeader('username', uname)
+		xhttp.setRequestHeader('password', pass)
+		console.log(xhttp)
+		xhttp.send();
+	}
+
+	getStatus() {
+		let url = 'http://128.199.202.74:8080/status'
+		let xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			console.log('ready state changed')
+		}
+		xhttp.open('GET', url, true)
+		xhttp.send();
 	}
 
   render() {
@@ -35,6 +49,9 @@ class LoginForm extends Component {
 			    </div>
 				  <button onClick={this.register}>
 	  				Login
+					</button>
+					<button onClick={this.getStatus}>
+	  				Status?
 					</button>
 				</span>
       );
