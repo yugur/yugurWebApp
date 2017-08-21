@@ -18,7 +18,7 @@ console.log('txt: ', txt);
 var result = segmenter.analyze(txt);
 console.log('result: ', result);
 
-txt = '我们家王冰蟾宝贝儿，不是我吹牛逼 长得真是美美美美美美美美美';
+txt = ' This a magnificent work. So I would like to have a bacon-and-egg sandwich to celebrate';
 console.log('txt: ', txt);
 
 result = segmenter.analyze(txt);
