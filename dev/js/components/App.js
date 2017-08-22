@@ -1,6 +1,8 @@
 import React from 'react';
 import WordList from '../containers/word-list';
 import WordDetail from '../containers/word-detail'
+import SearchBar from '../container/search-bar.js'
+
 require('../../css/main.scss');
 
 const App = () => (
@@ -9,6 +11,7 @@ const App = () => (
         <br/>
     	  <h1>Welcome To Yugur.io</h1>
         <br/>
+        <SearchBar></Searchbar>
       </header>
       <section className={'mainView'}>
       	<hr/>
