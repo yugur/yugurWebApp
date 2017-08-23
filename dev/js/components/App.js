@@ -11,7 +11,7 @@ const App = () => (
         <br/>
     	  <h1>Welcome To Yugur.io</h1>
         <br/>
-        <SearchBar></Searchbar>
+        <SearchBar></SearchBar>
       </header>
       <section className={'mainView'}>
       	<hr/>

@@ -6,20 +6,20 @@ import {selectWordEntry} from '../actions/selectWordEntry'
 class SearchBar extends Component {
 
   render() {
-      return (
-				<div id="search">
+    return (
+      <div id="search">
 
-							<form enctypr="text/plain" action="mailto:u5838661@anu.edu.au">
-								<ul>
-									<li>
-								<input type="text" name="search_word" placeholder="Search" size="40" maxlength="50">
+      <form enctypr="text/plain" action="mailto:u5838661@anu.edu.au">
+      <ul>
+      <li>
+      <input type="text" name="search_word" placeholder="Search" size="40" maxlength="50">
 
-						</li>
-						<li>GO</li>
-							</form>
-					</ul>
-				</div>
-      )
+      </li>
+      <li><button type="button">Go</button></li>
+      </form>
+      </ul>
+      </div>
+    )
   }
 }
 
