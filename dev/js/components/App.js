@@ -9,9 +9,9 @@ const App = () => (
     <div className={'app'}>
       <header>
         <br/>
-    	  <h1>Welcome To Yugur.io</h1>
+    	   <h1>Welcome To Yugur.io</h1>
         <br/>
-        <SearchBar></SearchBar>
+
       </header>
       <section className={'mainView'}>
       	<hr/>

@@ -9,13 +9,14 @@ class SearchBar extends Component {
     return (
       <div id="search">
 
-      <form enctypr="text/plain" action="mailto:u5838661@anu.edu.au">
+      <form enctypr="text/plain">
       <ul>
+
       <li>
       <input type="text" name="search_word" placeholder="Search" size="40" maxlength="50">
       </input>
-
       </li>
+
       <li><button type="button">Go</button></li>
       </ul>
       </form>
