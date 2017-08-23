@@ -1,7 +1,7 @@
 import React from 'react';
 import WordList from '../containers/word-list';
 import WordDetail from '../containers/word-detail'
-import SearchBar from '../container/search-bar.js'
+import SearchBar from '../containers/search-bar.js'
 
 require('../../css/main.scss');
 
