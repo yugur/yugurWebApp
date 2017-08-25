@@ -26,7 +26,7 @@ class SearchBar extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
+{/*function mapDispatchToProps(dispatch) {
 	return bindActionCreators(null, dispatch)
 }
 
@@ -34,6 +34,6 @@ function mapStateToProps(state) {
 	return {
 		wordEntries: state.wordEntries
 	};
-}
+}*/}
 
-export default connect(mapStateToProps, mapDispatchToProps)(WordList);
+export default SearchBar;
