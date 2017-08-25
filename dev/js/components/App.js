@@ -7,14 +7,18 @@ require('../../css/main.scss');
 
 const App = () => (
     <div className={'app'}>
+
+      {/*Banner*/}
       <header>
         <br/>
     	   <h1>Welcome To Yugur.io</h1>
         <br/>
-
       </header>
+
+      {/*Main content*/}
       <section className={'mainView'}>
       	<hr/>
+        <SearchBar></SearchBar>
       	<hr/>
       	<br/>
       	<h2 className={'heading'}>Word Entries:</h2>
