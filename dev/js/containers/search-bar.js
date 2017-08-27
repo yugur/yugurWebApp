@@ -24,7 +24,7 @@ class SearchBar extends Component {
 
             </li>
       			<li>
-      				<input type="text" name="search_word" placeholder="Search" size="40" maxlength="200">
+      				<input type="text" name="search_word" placeholder="Search" size="48" maxlength="200">
       			  </input>
       		  </li>
       		 <li><button type="button">Go</button></li>
