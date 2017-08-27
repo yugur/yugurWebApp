@@ -25,14 +25,17 @@ const App = () => (
       	<hr/>
       	<br/>
 
+        <div className={'selections'}>
       	<h2 className={'heading'}>Word Entries:</h2>
       	<WordList className={'wordEntry'}></WordList>
-        <br/>
-      	<hr/>
-        <br/>
+        </div>
 
+
+        <div className={'results'}>
       	<h2>Word Details:</h2>
         <WordDetail></WordDetail>
+        </div>
+
         <br/>
 
       </section>
