@@ -1,43 +1,53 @@
-import React, {Component, Button} from 'react';
+import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import {selectWordEntry} from '../actions/selectWordEntry'
 import {searchDictionary} from '../actions/searchDictionary'
 
 class SearchBar extends Component {
 
-	createListItems() {
-		return(
-			<form>
-				<input type='text'/>
-			</form>
-		);
-	}
-
-	triggerSearch() {
-		console.log('YAY')
-		if(document.getElementById('searchField')) {
-			console.log('ggggg')
-			this.props.searchDictionary(document.getElementById('searchField').value)
-		}
-		return;
-	}
-
+  triggerSearch() {
+    if(document.getElementById('searchField')) {
+      console.log('Searching...')
+      this.props.searchDictionary(document.getElementById('searchField').value)
+    }
+    return;
+  }
+  
   render() {
-  		let mySearchTrigger = this.triggerSearch.bind(this);
+    let mySearchTrigger = this.triggerSearch.bind(this);
+    return (
+      <div id="search">
 
-      return (
-      	<span>
-      		<form>
-						<input type='text' id='searchField'/>
-					</form>
-					<button onClick={mySearchTrigger}>Search!</button>
-				</span>
-      )
+
+      	<form enctypr="text/plain">
+      		<ul>
+            <li>Words</li>
+            <li>Semantics</li>
+            <li>Alphabets</li>
+            <li>
+            <select name="languages">
+              <option value="yugur">Yugur -> Yugur</option>
+              <option value="english">English -> Yugur</option>
+              <option value="chienese">Chinese -> Yugur</option>
+            </select>
+
+            </li>
+      			<li>
+      				<input type="text" name="search_word" placeholder="Search" size="48" maxlength="200">
+      			  </input>
+      		  </li>
+      		 <li><button type="button" onClick={mySearchTrigger}>Go</button></li>
+      	 </ul>
+        </form>
+
+      </div>
+    )
   }
 }
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators({searchDictionary: searchDictionary}, dispatch)
+  return bindActionCreators({searchDictionary: searchDictionary}, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(SearchBar);

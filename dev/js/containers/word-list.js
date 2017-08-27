@@ -8,7 +8,7 @@ class WordList extends Component {
 	createListItems() {
 		return this.props.wordEntries.map((word) => {
 			return (
-				<li key={word.id} onClick={() => this.props.selectWordEntry(word)}>
+				<li id="entry" key={word.id} onClick={() => this.props.selectWordEntry(word)}>
 					{word.writtenForm}
 				</li>
 			);
