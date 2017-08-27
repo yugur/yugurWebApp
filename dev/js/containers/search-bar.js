@@ -9,10 +9,22 @@ class SearchBar extends Component {
     return (
       <div id="search">
 
+
       	<form enctypr="text/plain">
       		<ul>
+            <li>Words</li>
+            <li>Semantics</li>
+            <li>Alphabets</li>
+            <li>
+            <select name="languages">
+              <option value="yugur">Yugur -> Yugur</option>
+              <option value="english">English -> Yugur</option>
+              <option value="chienese">Chinese -> Yugur</option>
+            </select>
+
+            </li>
       			<li>
-      				<input type="text" name="search_word" placeholder="Search" size="40" maxlength="50">
+      				<input type="text" name="search_word" placeholder="Search" size="40" maxlength="200">
       			  </input>
       		  </li>
       		 <li><button type="button">Go</button></li>

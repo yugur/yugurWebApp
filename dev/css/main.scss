@@ -1,4 +1,8 @@
+$bckgrd: #eaeaea;
 $primary: #006699;
+$banner: #200400;
+
+$entry-hover: #ee4321;
 $bg-img: url('placeholder.png');
 
 /*Styling for general*/
@@ -12,7 +16,7 @@ html, body {
 }
 
 header {
-	background-color: black;
+	background-color: $banner;
 	color: white;
 	padding-left: 2%;
 	//float: left;
@@ -20,6 +24,7 @@ header {
 }
 
 body {
+	background: $bckgrd;
 	//background: $bg-img no-repeat;
 	//background: k;
 	background-size: auto;
@@ -40,7 +45,7 @@ li {
 	margin: 10px;
 	display: block;
 	padding: 10px;
-	max-width: 8%;
+	//max-width: 8%;
 	text-align: center;
 	//color: $primary;
 	//float: right;
@@ -53,12 +58,13 @@ li {
 }
 
 .mainView {
-	background-color: rgba(240,240,255,0.5);
-	height: 100%;
+	background-color: rgba(255,255,255,0.9);
+	//height: 100%;
 	padding: 20px;
 	//min-width: inherit;
 	margin-left: 20px;
 	margin-right: 20px;
+	min-height: 200px;
 }
 
 
@@ -67,10 +73,29 @@ li {
 	color: gray;
 }
 
-/*Styling for specifics*/
-.wordEntry li {
-	color: $primary;
+.selections {
+	float: left;
+	margin-right: 30%;
+	padding-right: 20px;
+	max-width: 400px;
 }
+
+.results {
+	float: left;
+	border-left: 1px solid #999999;
+	padding-left: 20px;
+}
+
+/*Styling for specifics*/
+#entry:hover {
+	background: $entry-hover;
+	//text-align: right;
+}
+
+#entry:active, #entry:visited {
+	background: #000000;
+}
+
 
 #search li {
 	//float: left;
