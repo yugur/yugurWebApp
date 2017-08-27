@@ -2,10 +2,20 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {selectWordEntry} from '../actions/selectWordEntry'
+import {searchDictionary} from '../actions/searchDictionary'
 
 class SearchBar extends Component {
 
+  triggerSearch() {
+    if(document.getElementById('searchField')) {
+      console.log('Searching...')
+      this.props.searchDictionary(document.getElementById('searchField').value)
+    }
+    return;
+  }
+  
   render() {
+    let mySearchTrigger = this.triggerSearch.bind(this);
     return (
       <div id="search">
 
@@ -27,7 +37,7 @@ class SearchBar extends Component {
       				<input type="text" name="search_word" placeholder="Search" size="48" maxlength="200">
       			  </input>
       		  </li>
-      		 <li><button type="button">Go</button></li>
+      		 <li><button type="button" onClick={mySearchTrigger}>Go</button></li>
       	 </ul>
         </form>
 
@@ -36,14 +46,8 @@ class SearchBar extends Component {
   }
 }
 
-{/*function mapDispatchToProps(dispatch) {
-	return bindActionCreators(null, dispatch)
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({searchDictionary: searchDictionary}, dispatch)
 }
 
-function mapStateToProps(state) {
-	return {
-		wordEntries: state.wordEntries
-	};
-}*/}
-
-export default SearchBar;
+export default connect(null, mapDispatchToProps)(SearchBar);

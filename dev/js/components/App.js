@@ -1,10 +1,13 @@
 import React from 'react';
 import WordList from '../containers/word-list';
+
 import WordDetail from '../containers/word-detail'
 import SearchBar from '../containers/search-bar.js'
 import ActionMenu from '../containers/action-menu.js'
 {/*import MyImage from '../../images/placeholder.png';*/}
 {/*import Img from '../../images/placeholder.png'*/}
+import RegistrationForm from '../containers/registration-form';
+import LoginForm from '../containers/login-form';
 
 require('../../css/main.scss');
 
@@ -42,7 +45,6 @@ const App = () => (
         </div>
 
         <br/>
-
       </section>
     </div>
 );
