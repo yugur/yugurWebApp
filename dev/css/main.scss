@@ -19,6 +19,8 @@ header {
 	background-color: $banner;
 	color: white;
 	padding-left: 2%;
+	padding-top: 20px;
+	min-height: 95px;
 	//float: left;
 	//position: fixed;
 }
@@ -50,8 +52,39 @@ li {
 	//float: right;
 }
 
+span {
+	//float: right;
+}
 
-/*Styling for sections*/
+button {
+	padding: 5px;
+	text-align: center;
+}
+
+searchBar {
+	margin-left: 10vw;
+	vertical-align: center;
+}
+
+headerLogo {
+	margin-right: 10vw;
+}
+
+#username {
+	//text-align: right;
+	margin-left: 10px;
+}
+
+#password {
+	margin-left: 13.5px;
+}
+
+authSection {
+	float: right;
+	padding: 10%;
+}
+
+/*Styling for sections, i.e. className*/
 .app {
 	height: 100%;
 }
@@ -90,7 +123,15 @@ li {
 	padding-left: 20px;
 }
 
-/*Styling for specifics*/
+.account {
+	margin-top: -70px;
+	margin-right: 10px;
+	padding: 10px;
+	float: right;
+	//background: green;
+}
+
+/*Styling for specifics, i.e. id*/
 #entry:hover {
 	background: $entry-hover;
 	//text-align: right;
@@ -100,39 +141,21 @@ li {
 	background: #000000;
 }
 
+#search {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 
 #search li {
 	//float: left;
 	padding-left: 20px;
+	margin--bottom: 5px;
 	background-color: inherit;
 	display: inline;
 	margin: 0px;
 }
 
-#top-padding {
-	background-color: lightblue;
+#search_word {
+	font-size: 15px;
 }
-
-span {
-	float: left;
-}
-
-searchBar {
-	margin-left: 10vw;
-	vertical-align: center;
-}
-
-headerLogo {
-	margin-right: 10vw
-}
-
-username {
-	text-align: right;
-	margin-left: 5vw;
-}
-
-authSection {
-	float: right;
-	padding: 10%;
-}
-
