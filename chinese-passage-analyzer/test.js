@@ -18,7 +18,7 @@ console.log('txt: ', txt);
 var result = segmenter.analyze(txt);
 console.log('result: ', result);
 
-txt = ' This a magnificent work. So I would like to have a bacon-and-egg sandwich to celebrate';
+txt = ' Raheem Sterlings volley salvaged a point for 10-man Manchester City as Everton were denied victory on the night Wayne Rooney scored his 200th Premier League goal.';
 console.log('txt: ', txt);
 
 result = segmenter.analyze(txt);
