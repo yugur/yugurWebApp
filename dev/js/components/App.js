@@ -2,6 +2,7 @@ import React from 'react';
 import WordList from '../containers/word-list';
 import WordDetail from '../containers/word-detail'
 import SearchBar from '../containers/search-bar.js'
+import ActionMenu from '../containers/action-menu.js'
 {/*import MyImage from '../../images/placeholder.png';*/}
 {/*import Img from '../../images/placeholder.png'*/}
 
@@ -34,6 +35,10 @@ const App = () => (
         <div className={'results'}>
       	<h2>Word Details:</h2>
         <WordDetail></WordDetail>
+        </div>
+
+        <div className={'action-block'}>
+        <ActionMenu></ActionMenu>
         </div>
 
         <br/>
