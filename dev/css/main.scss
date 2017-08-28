@@ -21,6 +21,7 @@ header {
 	padding-left: 2%;
 	padding-top: 20px;
 	min-height: 95px;
+	//width: 100%;
 	//float: left;
 	//position: fixed;
 }
@@ -57,6 +58,8 @@ span {
 }
 
 button {
+	margin-top: 5px;
+	margin-right: 5px;
 	padding: 5px;
 	text-align: center;
 }
@@ -97,6 +100,7 @@ authSection {
 	//min-width: inherit;
 	margin-left: 20px;
 	margin-right: 20px;
+	margin-bottom: 10px;
 	min-height: 200px;
 }
 
@@ -131,6 +135,8 @@ authSection {
 	//background: green;
 }
 
+
+
 /*Styling for specifics, i.e. id*/
 #entry:hover {
 	background: $entry-hover;
@@ -149,7 +155,7 @@ authSection {
 
 #search li {
 	//float: left;
-	padding-left: 20px;
+	padding-left: 10px;
 	margin--bottom: 5px;
 	background-color: inherit;
 	display: inline;
@@ -157,5 +163,14 @@ authSection {
 }
 
 #search_word {
+	padding: 3px;
 	font-size: 15px;
+}
+
+#comments {
+	//background: black;
+	height: 100px;
+	//width: 50%;
+	min-height: 0px;
+	max-height: 100px;
 }

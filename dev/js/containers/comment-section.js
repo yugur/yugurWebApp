@@ -3,11 +3,11 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {selectWordEntry} from '../actions/selectWordEntry'
 
-class ActionMenu extends Component {
+class Comment extends Component {
 
   render() {
     return (
-      <div className="list-of-actions">
+      <div className="comment">
 
 
       </div>
@@ -25,4 +25,4 @@ function mapStateToProps(state) {
 	};
 }*/}
 
-export default ActionMenu;
+export default Comment;

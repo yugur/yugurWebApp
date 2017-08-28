@@ -37,7 +37,7 @@ class SearchBar extends Component {
       				<input type="text" id="search_word" name="search_word" placeholder="Search" size="48" maxlength="200">
       			  </input>
       		  </li>
-      		 <li><button type="button" onClick={mySearchTrigger}>Go</button></li>
+      		 <li><button type="button" onClick={mySearchTrigger}>Search</button></li>
       	 </ul>
         </form>
 
