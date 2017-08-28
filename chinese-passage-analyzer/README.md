@@ -4,12 +4,12 @@
 # node-analyzer
 node.js segmentation implementation based in IKAnalyzer
 
-# 安装
+# installation
       
       npm i node-analyzer
 
-# 用法
-test.js
+# how to use
+% node test.js
 
       var Segmenter = require('node-analyzer');
       var segmenter = new Segmenter();
