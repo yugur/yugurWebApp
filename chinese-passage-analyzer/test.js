@@ -23,3 +23,33 @@ console.log('txt: ', txt);
 
 result = segmenter.analyze(txt);
 console.log('result: ', result);
+
+txt = ' 上海自来水来自海上';
+console.log('txt: ', txt);
+
+result = segmenter.analyze(txt);
+console.log('result: ', result);
+
+txt = ' 白化病患者';
+console.log('txt: ', txt);
+
+result = segmenter.analyze(txt);
+console.log('result: ', result);
+
+txt = ' x射线检查由B超组代为实施';
+console.log('txt: ', txt);
+
+result = segmenter.analyze(txt);
+console.log('result: ', result);
+
+txt = ' 乒乓球拍卖完了';
+console.log('txt: ', txt);
+
+result = segmenter.analyze(txt);
+console.log('result: ', result);
+
+txt = ' cersei.Lannister@gmail.com';
+console.log('txt: ', txt);
+
+result = segmenter.analyze(txt);
+console.log('result: ', result);
