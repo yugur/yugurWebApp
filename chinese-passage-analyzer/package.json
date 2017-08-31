@@ -1,6 +1,6 @@
 {
-  "name": "node-analyzer",
-  "version": "5.0.1",
+  "name": "chinese-passage-analyzer",
+  "version": "1.0.1",
   "private": false,
   "dependencies": {},
   "devDependencies": {
@@ -24,9 +24,9 @@
     "ikanalyzer",
     "中文分词"
   ],
-  "author": "newebug@gmail.com",
+  "author": "u5953423@anu.edu.au",
   "license": "Apache Licence 2.0",
   "bugs": {
-    "url": "https://github.com/newebug/node-analyzer/issues"
+    "url": "https://github.com/yugur/yugurWebApp"
   }
 }

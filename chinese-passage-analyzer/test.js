@@ -1,13 +1,13 @@
-var Segmenter = require('./lib/Segmenter');
+var Segmenter = require('./Segmenter');
 
 
 var opts = {
-  MainDictPath: 'lib/dict/main.dic',
-  SurnameDictPath: 'lib/dict/surname.dic',
-  QuantifierDictPath: 'lib/dict/quantifier.dic',
-  SuffixDictPath: 'lib/dict/suffix.dic',
-  PrepDictPath: 'lib/dict/preposition.dic',
-  StopWordDictPath: 'lib/dict/stopword.dic',
+  MainDictPath: './dict/main.dic',
+  SurnameDictPath: './dict/surname.dic',
+  QuantifierDictPath: './dict/quantifier.dic',
+  SuffixDictPath: './dict/suffix.dic',
+  PrepDictPath: './dict/preposition.dic',
+  StopWordDictPath: './dict/stopword.dic',
 };
 
 var segmenter = new Segmenter(opts);
@@ -42,7 +42,7 @@ console.log('txt: ', txt);
 result = segmenter.analyze(txt);
 console.log('result: ', result);
 
-txt = ' 乒乓球拍卖完了';
+txt = ' 乒乓球拍卖完了';//The table tennis balls' auction has finished // The table tennis rackets are sold out
 console.log('txt: ', txt);
 
 result = segmenter.analyze(txt);

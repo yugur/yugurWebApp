@@ -6,15 +6,17 @@ Chinese word segmentation implementation based in node.js
       npm i chinese-passage-analyzer
 
 # core section
-./lib/Segmenter.js : main entry which calls subordinate segmenters including:
+Segmenter.js : main entry which calls subordinate segmenters including:
 
-./lib/LetterSegmenter.js: handler for english and arabic number chars
+LetterSegmenter.js: handler for english and arabic number chars
 
-./lib/CN_QuantifierSegmenter.js: handler for chinese quantifiers
+CN_QuantifierSegmenter.js: handler for chinese quantifiers
 
-./lib/CJKSegmenter.js: handler for common characters in Chinese/Japanese/Korean
+CJKSegmenter.js: handler for common characters in Chinese/Japanese/Korean
 
-./lib/IKArbitrator.js: similarity handler (Idea comes from GitHub program IKAnalyzer)
+IKArbitrator.js: similarity handler (Idea comes from GitHub program IKAnalyzer)
+
+AnalyzeContext.js: analyze the context to handle possible merge or change of property of the current Hit words
 
 #TEST SUITE(From SITRAN Bakeoff 2005)
 A recognized chinese segmentation dataset and its training model. Prepared for further instrumented tests(Based on the comparison between analyzer output and standard golden output provided by SITRAN). Does not matter in Audit 1.
