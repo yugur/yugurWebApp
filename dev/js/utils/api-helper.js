@@ -14,6 +14,21 @@ export function getAllWordEntries() {
   return wordEntries;
 }
 
+export function searchDictionaryByWord(searchTerm) {
+  console.log('Search: ',searchTerm)
+  let url = BASE_API_URL+FETCH_ENDPOINT+'?q='+searchTerm
+  let type = 'GET'
+
+  let authToken = getAuthToken()
+  let params = {
+    token: authToken
+  }
+  let headers = {}
+
+  let wordEntries = makeRequest(type, url, params, headers)
+  return wordEntries;
+}
+
 //Calls login endpoint to retrieve auth token, stores token locally
 export function login(uname, password) {
   //TODO
@@ -25,18 +40,19 @@ export function authStatus(auth) {
 }
 
 //retrieves the current auth token from local storage
-getAuthToken() {
+function getAuthToken() {
 
 }
 
  //Makes API requests
-makeRequest(type, url, params) {
+function makeRequest(type, url, params, headers) {
   switch(type) {
     case 'GET':
       options = {
         uri: url,
         method: type,
-        body: params
+        body: params,
+        headers: headers
       }
       request.get(options, function(err, resp, body) {
         console.log('error:', err)

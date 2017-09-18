@@ -3,13 +3,34 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {selectWordEntry} from '../actions/selectWordEntry'
 import {searchDictionary} from '../actions/searchDictionary'
+//import {searchDictionaryByWord} from '../utils/api-helper'
+let {BASE_API_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, STATUS_ENDPOINT, SEARCH_ENDPOINT, FETCH_ENDPOINT} = require('../constants')
+//import request from 'request'
 
 class SearchBar extends Component {
 
   triggerSearch() {
+    console.log('Here')
     if(document.getElementById('searchField')) {
       console.log('Searching...')
-      this.props.searchDictionary(document.getElementById('searchField').value)
+
+      let searchTerm = document.getElementById('searchField').value
+
+      let searchResults// = 'g' //searchDictionaryByWord(searchTerm)
+      let url = BASE_API_URL+FETCH_ENDPOINT
+      let xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        console.log('ready state changed')
+        console.log(xhttp.responseText)
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(xhttp.responseText)
+        }
+      }
+      xhttp.open('GET', url, true)
+      //xhttp.setRequestHeader('q', searchTerm)
+      console.log(xhttp)
+      xhttp.send();
+      //this.props.searchDictionary(searchResults)
     }
     return;
   }
@@ -17,27 +38,27 @@ class SearchBar extends Component {
   render() {
     let mySearchTrigger = this.triggerSearch.bind(this);
     return (
-      <div id="search">
+      <div id='search'>
 
 
-      	<form enctypr="text/plain">
+      	<form>
       		<ul>
             <li>Words</li>
             <li>Semantics</li>
             <li>Alphabets</li>
             <li>
-            <select name="languages">
-              <option value="yugur">Yugur -> Yugur</option>
-              <option value="english">English -> Yugur</option>
-              <option value="chienese">Chinese -> Yugur</option>
+            <select name='languages'>
+              <option value='yugur'>Yugur -> Yugur</option>
+              <option value='english'>English -> Yugur</option>
+              <option value='chienese'>Chinese -> Yugur</option>
             </select>
 
             </li>
       			<li>
-      				<input type="text" name="search_word" placeholder="Search" size="48" maxlength="200">
+      				<input id='searchField' type='text' name='search_word' placeholder='Search' size='48' maxLength='200'>
       			  </input>
       		  </li>
-      		 <li><button type="button" onClick={mySearchTrigger}>Go</button></li>
+      		 <li><button type='button' onClick={mySearchTrigger}>Go</button></li>
       	 </ul>
         </form>
 
