@@ -54,10 +54,12 @@ function makeRequest(type, url, params, headers) {
         body: params,
         headers: headers
       }
+      /*
       request.get(options, function(err, resp, body) {
         console.log('error:', err)
         return body;
       })
+      */
     case 'POST':
       break;
     case 'PUT':

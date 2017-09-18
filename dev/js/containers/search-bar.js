@@ -17,7 +17,10 @@ class SearchBar extends Component {
       let searchTerm = document.getElementById('searchField').value
 
       let searchResults// = 'g' //searchDictionaryByWord(searchTerm)
-      let url = BASE_API_URL+FETCH_ENDPOINT
+
+      //searchDictionaryByWord(searchTerm)
+      
+      let url = BASE_API_URL+FETCH_ENDPOINT+'?q='+searchTerm
       let xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         console.log('ready state changed')
@@ -31,6 +34,7 @@ class SearchBar extends Component {
       console.log(xhttp)
       xhttp.send();
       //this.props.searchDictionary(searchResults)
+      
     }
     return;
   }
