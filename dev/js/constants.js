@@ -1,5 +1,5 @@
 //Base URL for the hosted API
-export const BASE_API_URL = 'http://http://174.138.26.120:8080'
+export const BASE_API_URL = 'http://174.138.26.120:8080'
 
 //API Endpoints
 export const REGISTER_ENDPOINT = '/register'
