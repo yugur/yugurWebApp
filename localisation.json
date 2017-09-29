@@ -5,6 +5,8 @@
     {"id": "Selections", "English": "Word Entries", "Mandarin": "词条查询结果列表"}
     {"id": "Results", "English": "Word Details", "Mandarin": "词条释义"}
     {"id": "Login", "English": "Login", "Mandarin": "账号登录"}
+    {"id": "Username", "English": "Username", "Mandarin": "账户名"}
+    {"id": "Password", "English": "Password", "Mandarin": "密码"}
     {"id": "Register", "English": "Sign up", "Mandarin": "注册账号"}
     {"id": "Home", "English": "Back to the home page", "Mandarin": "返回网站首页"}
     {"id": "Search", "English": "Search", "Mandarin": "查询词条"}
