@@ -1,5 +1,4 @@
-let request = require('request');
-let {BASE_API_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, STATUS_ENDPOINT, SEARCH_ENDPOINT, FETCH_ENDPOINT} = require('../constants')
+let {BASE_API_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, STATUS_ENDPOINT, SEARCH_ENDPOINT, FETCH_ENDPOINT, DELETE_ENDPOINT} = require('../constants')
 
 export function getAllWordEntries() {
   let url = BASE_API_URL+FETCH_ENDPOINT
@@ -16,16 +15,10 @@ export function getAllWordEntries() {
 
 export function searchDictionaryByWord(searchTerm) {
   console.log('Search: ',searchTerm)
-  let url = BASE_API_URL+FETCH_ENDPOINT+'?q='+searchTerm
+  let url = BASE_API_URL+SEARCH_ENDPOINT+'?q='+searchTerm
   let type = 'GET'
 
-  let authToken = getAuthToken()
-  let params = {
-    token: authToken
-  }
-  let headers = {}
-
-  let wordEntries = makeRequest(type, url, params, headers)
+  let wordEntries = makeRequest(type, url)
   return wordEntries;
 }
 
@@ -39,32 +32,50 @@ export function authStatus(auth) {
   //TODO
 }
 
+export function deleteEntry(entry) {
+  console.log('Delete: ', entry)
+  let url = BASE_API_URL+DELETE_ENDPOINT+'?q='+entry
+  let type = 'DELETE'
+  let result = makeRequest(type, url)
+}
+
 //retrieves the current auth token from local storage
 function getAuthToken() {
 
 }
 
  //Makes API requests
-function makeRequest(type, url, params, headers) {
+function makeRequest(type, url) {
+  let xhttp = new XMLHttpRequest();
   switch(type) {
     case 'GET':
-      options = {
-        uri: url,
-        method: type,
-        body: params,
-        headers: headers
+      xhttp.onreadystatechange = function() {
+        console.log('ready state changed')
+        console.log(xhttp)
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(xhttp.responseText)
+        }
       }
-      /*
-      request.get(options, function(err, resp, body) {
-        console.log('error:', err)
-        return body;
-      })
-      */
+      xhttp.open(type, url, true)
+      //xhttp.setRequestHeader('q', searchTerm)
+      console.log(xhttp)
+      xhttp.send();
     case 'POST':
       break;
     case 'PUT':
       break;
     case 'DELETE':
+      xhttp.onreadystatechange = function() {
+        console.log('ready state changed')
+        console.log(xhttp)
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(xhttp.responseText)
+        }
+      }
+      xhttp.open(type, url, true)
+      //xhttp.setRequestHeader('q', searchTerm)
+      console.log(xhttp)
+      xhttp.send();
       break;
   }
 }

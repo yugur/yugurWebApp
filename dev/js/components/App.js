@@ -28,7 +28,7 @@ const App = () => (
         <SearchBar></SearchBar>
       	<hr/>
       	<br/>
-
+        
         <div className={'selections'}>
       	<h2 className={'heading'}>Word Entries:</h2>
       	<WordList className={'wordEntry'}></WordList>

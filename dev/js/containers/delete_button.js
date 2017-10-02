@@ -3,22 +3,22 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {selectWordEntry} from '../actions/selectWordEntry'
 import {searchDictionary} from '../actions/searchDictionary'
-import {searchDictionaryByWord} from '../utils/api-helper'
+import {deleteEntry} from '../utils/api-helper'
 let {BASE_API_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, STATUS_ENDPOINT, SEARCH_ENDPOINT, FETCH_ENDPOINT} = require('../constants')
 //import request from 'request'
 
-class SearchBar extends Component {
+class DeleteButton extends Component {
 
-  triggerSearch() {
+  triggerDelete() {
     if(document.getElementById('searchField')) {
-      console.log('Searching...')
+      console.log('Deleting...')
+      console.log(this.props)
+      let entryId = this.props.entryId
 
-      let searchTerm = document.getElementById('searchField').value
+      console.log('Dleete Term: ', entryId)
+      let deleteResult// = 'g' //searchDictionaryByWord(searchTerm)
 
-      console.log('Search Term: ', searchTerm)
-      let searchResults// = 'g' //searchDictionaryByWord(searchTerm)
-
-      searchDictionaryByWord(searchTerm)
+      deleteEntry(entryId)
       
       // let url = BASE_API_URL+SEARCH_ENDPOINT+'?q='+searchTerm
       // let xhttp = new XMLHttpRequest();
@@ -40,32 +40,10 @@ class SearchBar extends Component {
   }
   
   render() {
-    let mySearchTrigger = this.triggerSearch.bind(this);
+    let myDeleteTrigger = this.triggerDelete.bind(this);
     return (
-      <div id='search'>
-
-
-      	<form>
-      		<ul>
-            <li>Words</li>
-            <li>Semantics</li>
-            <li>Alphabets</li>
-            <li>
-            <select name='languages'>
-              <option value='yugur'>Yugur -> Yugur</option>
-              <option value='english'>English -> Yugur</option>
-              <option value='chienese'>Chinese -> Yugur</option>
-            </select>
-
-            </li>
-      			<li>
-      				<input id='searchField' type='text' name='search_word' placeholder='Search' size='48' maxLength='200'>
-      			  </input>
-      		  </li>
-      		 <li><button type='button' onClick={mySearchTrigger}>Go</button></li>
-      	 </ul>
-        </form>
-
+      <div id='delete'>
+        <button onClick={myDeleteTrigger}>Delete Word</button>
       </div>
     )
   }
@@ -75,4 +53,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({searchDictionary: searchDictionary}, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(DeleteButton);
