@@ -4,6 +4,7 @@ import WordList from '../containers/word-list';
 import WordDetail from '../containers/word-detail'
 import SearchBar from '../containers/search-bar.js'
 import ActionMenu from '../containers/action-menu.js'
+import CreateEntry from '../containers/create-entry.js'
 {/*import MyImage from '../../images/placeholder.png';*/}
 {/*import Img from '../../images/placeholder.png'*/}
 import RegistrationForm from '../containers/registration-form';
@@ -28,7 +29,7 @@ const App = () => (
         <SearchBar></SearchBar>
       	<hr/>
       	<br/>
-        
+        <CreateEntry></CreateEntry>
         <div className={'selections'}>
       	<h2 className={'heading'}>Word Entries:</h2>
       	<WordList className={'wordEntry'}></WordList>

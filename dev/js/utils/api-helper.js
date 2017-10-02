@@ -1,4 +1,4 @@
-let {BASE_API_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, STATUS_ENDPOINT, SEARCH_ENDPOINT, FETCH_ENDPOINT, DELETE_ENDPOINT} = require('../constants')
+let {BASE_API_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, STATUS_ENDPOINT, CREATE_ENDPOINT, SEARCH_ENDPOINT, FETCH_ENDPOINT, DELETE_ENDPOINT} = require('../constants')
 
 export function getAllWordEntries() {
   let url = BASE_API_URL+FETCH_ENDPOINT
@@ -39,13 +39,31 @@ export function deleteEntry(entry) {
   let result = makeRequest(type, url)
 }
 
+export function createEntry(data) {
+  console.log(data)
+
+  let url = BASE_API_URL+CREATE_ENDPOINT+buildCreateQuery(data)
+  let type = 'POST'
+  let result = makeRequest(type, url)
+}
+
 //retrieves the current auth token from local storage
 function getAuthToken() {
 
 }
 
+function buildCreateQuery(data) {
+  let queryString = '?'
+
+  data.headword ? queryString = queryString + 'headword=' + data.headword : ''
+  data.definition ? queryString = queryString + '&definition=' + data.definition : ''
+
+  return queryString
+}
+
  //Makes API requests
 function makeRequest(type, url) {
+  console.log(type, url)
   let xhttp = new XMLHttpRequest();
   switch(type) {
     case 'GET':
@@ -61,6 +79,17 @@ function makeRequest(type, url) {
       console.log(xhttp)
       xhttp.send();
     case 'POST':
+      xhttp.onreadystatechange = function() {
+        console.log('ready state changed')
+        console.log(xhttp)
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(xhttp.responseText)
+        }
+      }
+      xhttp.open(type, url, true)
+      //xhttp.setRequestHeader('q', searchTerm)
+      console.log(xhttp)
+      xhttp.send();
       break;
     case 'PUT':
       break;
