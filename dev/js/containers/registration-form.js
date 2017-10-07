@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
+//localisation
+var now = [
+  require('../../../test_language.json')
+];
 
 
 class RegistrationForm extends Component {
@@ -32,17 +36,17 @@ class RegistrationForm extends Component {
   render() {
       return (
       	<span>
-      		<h2>Register New User</h2>
+      		<h2>{now[0][7].Mandarin}</h2>
 			    <div>
-			      <label>Username:</label>
+			      <label>{now[0][5].Mandarin}:</label>
 			      <input type="text" id='username' name="username" />
 			    </div>
 			    <div>
-			      <label>Password:</label>
+			      <label>{now[0][6].Mandarin}:</label>
 			      <input type="text" id='password' name="password" />
 			    </div>
 				  <button onClick={this.register}>
-	  				Register
+	  				{now[0][7].Mandarin}
 					</button>
 				</span>
       );

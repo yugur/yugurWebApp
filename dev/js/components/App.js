@@ -11,6 +11,11 @@ import LoginForm from '../containers/login-form';
 
 require('../../css/main.scss');
 
+//localisation
+var now = [
+  require('../../../test_language.json')
+];
+
 const App = () => (
     <div className={'app'}>
 
@@ -18,7 +23,7 @@ const App = () => (
       <header>
       {/*<div>*/}
         <br/>
-    	   <h1>Welcome To Yugur.io</h1>
+    	   <h1>{now[0][1].Mandarin}</h1>
 
 
         <div className={'account'}>
@@ -44,13 +49,13 @@ const App = () => (
       	<br/>
 
         <div className={'selections'}>
-      	<h2 className={'heading'}>Word Entries:</h2>
+      	<h2 className={'heading'}>{now[0][2].Mandarin}:</h2>
       	<WordList className={'wordEntry'}></WordList>
         </div>
 
 
         <div className={'results'}>
-      	<h2>Word Details:</h2>
+      	<h2>{now[0][3].Mandarin}:</h2>
         <WordDetail></WordDetail>
         </div>
 

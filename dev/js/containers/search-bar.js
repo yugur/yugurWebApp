@@ -6,8 +6,9 @@ import {searchDictionary} from '../actions/searchDictionary'
 
 //const lalng = require('../../../test_language.json');
 
-const now = [
-  require('../../../test_language')
+//localisation
+var now = [
+  require('../../../test_language.json')
 ];
 
 class SearchBar extends Component {
@@ -33,17 +34,17 @@ class SearchBar extends Component {
             <li>Alphabets</li>
             <li>
             <select name="languages">
-              <option value="yugur">Yugur -> Yugur</option>
-              <option value="english">English -> Yugur</option>
-              <option value="chienese">中文 -> Yugur</option>
+              <option value="yugur">{now[0][11].Mandarin}</option>
+              <option value="english">{now[0][12].Mandarin}</option>
+              <option value="chienese">{now[0][13].Mandarin}</option>
             </select>
 
             </li>
       			<li>
-      				<input type="text" id="search_word" name="search_word" placeholder="Search" size="48" maxlength="200">
+      				<input type="text" id="search_word" name="search_word" placeholder={now[0][9].Mandarin} size="48" maxlength="200">
       			  </input>
       		  </li>
-      		 <li><button type="button" onClick={mySearchTrigger}>Search</button></li>
+      		 <li><button type="button" onClick={mySearchTrigger}>{now[0][9].Mandarin}</button></li>
       	 </ul>
         </form>
 
