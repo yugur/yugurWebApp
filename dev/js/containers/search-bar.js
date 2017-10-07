@@ -3,9 +3,12 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {selectWordEntry} from '../actions/selectWordEntry'
 import {searchDictionary} from '../actions/searchDictionary'
-//import {lan} from '../../../test_language.json'
 
-const lalng = require('../../../test_language.json');
+//const lalng = require('../../../test_language.json');
+
+const now = [
+  require('../../../test_language')
+];
 
 class SearchBar extends Component {
 
