@@ -12,7 +12,7 @@ class WordList extends Component {
 			return searchResults.map((word) => {
 				return (
 					<li id="entry" key={word.id} onClick={() => this.props.selectWordEntry(word)}>
-						{word.writtenForm}
+						{word.headword}
 					</li>
 				);
 			});

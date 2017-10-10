@@ -13,9 +13,9 @@ class WordDetail extends Component {
     return (
     	<div>
     		<img src={this.props.selectedWord.image} />
-    		<h1>{this.props.selectedWord.writtenForm}</h1>
+    		<h1>{this.props.selectedWord.headword}</h1>
     		<h3>Definition: {this.props.selectedWord.definition}</h3>
-        <h5>Entry Date: {this.props.selectedWord.entryDate}</h5>
+        <h5>Language: {this.props.selectedWord.hw_lang}</h5>
         <DeleteButton entryId={this.props.selectedWord.id}></DeleteButton>
      	</div>
     );
