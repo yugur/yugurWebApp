@@ -80,6 +80,7 @@ function makeRequest(type, url) {
         console.log(xhttp)
         if (this.readyState == 4 && this.status == 200) {
           console.log(xhttp.responseText)
+          return xhttp.responseText
         }
       }
       xhttp.open(type, url, true)
