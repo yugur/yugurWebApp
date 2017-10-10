@@ -5,7 +5,7 @@ module.exports = {
     devServer: {
         inline: true,
         contentBase: './src',
-        //host: '174.138.26.120',
+        host: '128.199.179.198',
         port: 3000
     },
     devtool: 'cheap-module-eval-source-map',
