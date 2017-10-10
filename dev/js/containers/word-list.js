@@ -6,16 +6,25 @@ import {selectWordEntry} from '../actions/selectWordEntry'
 class WordList extends Component {
 
 	createListItems() {
-		return this.props.wordEntries.map((word) => {
+		if (this.props.searchResults) {
+			return this.props.searchResults.map((word) => {
+				return (
+					<li id="entry" key={word.id} onClick={() => this.props.selectWordEntry(word)}>
+						{word.writtenForm}
+					</li>
+				);
+			});
+		} else {
 			return (
-				<li id="entry" key={word.id} onClick={() => this.props.selectWordEntry(word)}>
-					{word.writtenForm}
-				</li>
-			);
-		});
+				<div>
+					Search the dictionary..
+				</div>
+			)
+		}
 	}
 
   render() {
+  		console.log(this.props)
       return (
       	<ul>
       		{this.createListItems()}
@@ -30,7 +39,8 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
 	return {
-		wordEntries: state.wordEntries
+		wordEntries: state.wordEntries,
+		searchResults: state.searchResults
 	};
 }
 

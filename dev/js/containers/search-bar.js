@@ -18,8 +18,13 @@ class SearchBar extends Component {
       console.log('Search Term: ', searchTerm)
       let searchResults// = 'g' //searchDictionaryByWord(searchTerm)
 
-      searchDictionaryByWord(searchTerm)
-      
+      console.log('Before')
+      let searchResponse = searchDictionaryByWord(searchTerm)
+      //let searchResponse = 'fire: a flame'
+      console.log('After')
+
+      this.props.searchDictionary(searchResponse)
+      console.log('after reducer')
       // let url = BASE_API_URL+SEARCH_ENDPOINT+'?q='+searchTerm
       // let xhttp = new XMLHttpRequest();
       // xhttp.onreadystatechange = function() {

@@ -1,4 +1,4 @@
-let {BASE_API_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, STATUS_ENDPOINT, CREATE_ENDPOINT, SEARCH_ENDPOINT, FETCH_ENDPOINT, DELETE_ENDPOINT} = require('../constants')
+let {BASE_API_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, STATUS_ENDPOINT, SEARCH_ENDPOINT, FETCH_ENDPOINT, ENTRY_ENDPOINT} = require('../constants')
 
 export function getAllWordEntries() {
   let url = BASE_API_URL+FETCH_ENDPOINT
@@ -22,6 +22,14 @@ export function searchDictionaryByWord(searchTerm) {
   return wordEntries;
 }
 
+export function searchDictionaryById(entry) {
+  console.log(entry)
+  let url = BASE_API_URL+ENTRY_ENDPOINT+'?='+entry
+  let type = 'GET'
+
+  let entryResult = makeRequest(type, url)
+}
+
 //Calls login endpoint to retrieve auth token, stores token locally
 export function login(uname, password) {
   //TODO
@@ -34,7 +42,7 @@ export function authStatus(auth) {
 
 export function deleteEntry(entry) {
   console.log('Delete: ', entry)
-  let url = BASE_API_URL+DELETE_ENDPOINT+'?q='+entry
+  let url = BASE_API_URL+ENTRY_ENDPOINT+'?q='+entry
   let type = 'DELETE'
   let result = makeRequest(type, url)
 }
@@ -42,7 +50,7 @@ export function deleteEntry(entry) {
 export function createEntry(data) {
   console.log(data)
 
-  let url = BASE_API_URL+CREATE_ENDPOINT+buildCreateQuery(data)
+  let url = BASE_API_URL+ENTRY_ENDPOINT+buildCreateQuery(data)
   let type = 'POST'
   let result = makeRequest(type, url)
 }
