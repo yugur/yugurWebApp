@@ -13,12 +13,12 @@ export function getAllWordEntries() {
   return wordEntries;
 }
 
-export function searchDictionaryByWord(searchTerm) {
+export function searchDictionaryByWord(searchTerm, callback) {
   console.log('Search: ',searchTerm)
   let url = BASE_API_URL+SEARCH_ENDPOINT+'?q='+searchTerm
   let type = 'GET'
 
-  let wordEntries = makeRequest(type, url)
+  let wordEntries = makeRequest(type, url, callback)
   return wordEntries;
 }
 
@@ -70,7 +70,7 @@ function buildCreateQuery(data) {
 }
 
  //Makes API requests
-function makeRequest(type, url) {
+function makeRequest(type, url, callback) {
   console.log(type, url)
   let xhttp = new XMLHttpRequest();
   switch(type) {
@@ -80,6 +80,7 @@ function makeRequest(type, url) {
         console.log(xhttp)
         if (this.readyState == 4 && this.status == 200) {
           console.log(xhttp.responseText)
+          callback(xhttp.responseText)
           return xhttp.responseText
         }
       }
@@ -87,6 +88,7 @@ function makeRequest(type, url) {
       //xhttp.setRequestHeader('q', searchTerm)
       console.log(xhttp)
       xhttp.send();
+      break
     case 'POST':
       xhttp.onreadystatechange = function() {
         console.log('ready state changed')

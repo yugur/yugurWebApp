@@ -19,7 +19,7 @@ class SearchBar extends Component {
       let searchResults// = 'g' //searchDictionaryByWord(searchTerm)
 
       console.log('Before')
-      let searchResponse = searchDictionaryByWord(searchTerm)
+      let searchResponse = searchDictionaryByWord(searchTerm, this.props.searchDictionary)
       //let searchResponse = 'fire: a flame'
       console.log('After')
 
