@@ -50,9 +50,11 @@ export function deleteEntry(entry) {
 export function createEntry(data) {
   console.log(data)
 
-  let url = BASE_API_URL+ENTRY_ENDPOINT+buildCreateQuery(data)
+  let url = BASE_API_URL+ENTRY_ENDPOINT//+buildCreateQuery(data)
   let type = 'POST'
-  let result = makeRequest(type, url)
+
+  let body = buildCreateBody(data)
+  let result = makeRequest(type, url, null, body)
 }
 
 //retrieves the current auth token from local storage
@@ -60,17 +62,21 @@ function getAuthToken() {
 
 }
 
-function buildCreateQuery(data) {
-  let queryString = '?'
+function buildCreateBody(data) {
+  //let queryString = '?'
 
-  data.headword ? queryString = queryString + 'headword=' + data.headword : ''
-  data.definition ? queryString = queryString + '&definition=' + data.definition : ''
+  let body = {
+    headword: data.headword,
+    definition: data.definition
+  }
+  //data.headword ? queryString = queryString + 'headword=' + data.headword : ''
+  //data.definition ? queryString = queryString + '&definition=' + data.definition : ''
 
-  return queryString
+  return body
 }
 
  //Makes API requests
-function makeRequest(type, url, callback) {
+function makeRequest(type, url, callback, body) {
   console.log(type, url)
   let xhttp = new XMLHttpRequest();
   switch(type) {
@@ -100,7 +106,8 @@ function makeRequest(type, url, callback) {
       xhttp.open(type, url, true)
       //xhttp.setRequestHeader('q', searchTerm)
       console.log(xhttp)
-      xhttp.send();
+      console.log('body: ', body)
+      xhttp.send(body);
       break;
     case 'PUT':
       break;
