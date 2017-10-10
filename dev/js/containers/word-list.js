@@ -9,7 +9,7 @@ class WordList extends Component {
 		if (this.props.searchResults) {
 			let searchResults = JSON.parse(this.props.searchResults)
 			console.log(searchResults)
-			return this.props.searchResults.map((word) => {
+			return searchResults.map((word) => {
 				return (
 					<li id="entry" key={word.id} onClick={() => this.props.selectWordEntry(word)}>
 						{word.writtenForm}
