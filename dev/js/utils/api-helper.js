@@ -81,7 +81,7 @@ function makeRequest(type, url, callback) {
         if (this.readyState == 4 && this.status == 200) {
           console.log(xhttp.responseText)
           callback(xhttp.responseText)
-          return xhttp.responseText
+          return (JSON.parse(xhttp.responseText))
         }
       }
       xhttp.open(type, url, true)
