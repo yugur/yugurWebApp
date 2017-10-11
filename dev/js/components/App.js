@@ -22,10 +22,6 @@ const App = () => (
         <br/>
     	   <h1>Welcome To Yugur.io</h1>
 
-        <div>
-        <LanguageSwitcher></LanguageSwitcher>
-        </div>
-
         <div className={'account'}>
         <RegistrationForm></RegistrationForm>
         </div>
@@ -42,6 +38,9 @@ const App = () => (
       <section className={'mainView'}>
 
         {/*<div className={'mainView'}>*/}
+        <div className={'language-switcher'}>
+      <LanguageSwitcher></LanguageSwitcher>
+        </div>
       	<hr/>
 
         <SearchBar></SearchBar>
