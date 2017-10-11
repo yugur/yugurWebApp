@@ -17,13 +17,27 @@ const App = () => (
 
       {/*Banner*/}
       <header>
+      {/*<div>*/}
         <br/>
     	   <h1>Welcome To Yugur.io</h1>
+
+
+        <div className={'account'}>
+        <RegistrationForm></RegistrationForm>
+        </div>
+
+        <div className={'account'}>
+        <LoginForm></LoginForm>
+        </div>
+
         <br/>
+      {/*</div>*/}
       </header>
 
       {/*Main content*/}
       <section className={'mainView'}>
+
+        {/*<div className={'mainView'}>*/}
       	<hr/>
 
         <SearchBar></SearchBar>
@@ -46,7 +60,12 @@ const App = () => (
         </div>
 
         <br/>
+        {/*</div>*/}
       </section>
+
+      <div className={'mainView'} id={'comments'}>
+
+      </div>
     </div>
 );
 

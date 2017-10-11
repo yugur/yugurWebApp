@@ -43,7 +43,7 @@ class SearchBar extends Component {
     }
     return;
   }
-  
+
   render() {
     let mySearchTrigger = this.triggerSearch.bind(this);
     return (
@@ -64,10 +64,14 @@ class SearchBar extends Component {
 
             </li>
       			<li>
-      				<input id='searchField' type='text' name='search_word' placeholder='Search' size='48' maxLength='200'>
+
+
+
+      				<input type="text" id="searchField" name="search_word" placeholder="Search" size="48" maxLength="200">
       			  </input>
       		  </li>
-      		 <li><button type='button' onClick={mySearchTrigger}>Go</button></li>
+      		 <li><button type="button" onClick={mySearchTrigger}>Search</button></li>
+
       	 </ul>
         </form>
 
