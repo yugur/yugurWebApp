@@ -3,6 +3,14 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {selectWordEntry} from '../actions/selectWordEntry'
 
+//let localisation = JSON.parse('../../assets/localisation.json')
+
+// let request = new XMLHttpRequest();
+// request.open("GET", "../../assets/localisation.json", false);
+// request.send(null)
+// let localisation = JSON.parse(request.responseText);
+// console.log(localisation)
+
 class WordList extends Component {
 
 	createListItems() {
