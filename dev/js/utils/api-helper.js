@@ -110,7 +110,7 @@ function makeRequest(type, url, callback, body) {
       //xhttp.setRequestHeader('q', searchTerm)
       console.log(xhttp)
       console.log('body: ', body)
-      xhttp.setRequestHeader('Content-type', 'application/json')
+      xhttp.setRequestHeader('Content-type', 'text/plain')
       xhttp.send(body);
       break;
     case 'PUT':
