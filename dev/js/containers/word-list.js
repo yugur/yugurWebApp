@@ -47,7 +47,8 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
 	return {
 		wordEntries: state.wordEntries,
-		searchResults: state.searchResults
+		searchResults: state.searchResults,
+		displayLanguage: state.displayLanguage
 	};
 }
 

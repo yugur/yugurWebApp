@@ -59,4 +59,10 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({searchDictionary: searchDictionary}, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(CreateButton);
+function mapStateToProps(state) {
+  return {
+    displayLanguage: state.displayLanguage
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateButton);

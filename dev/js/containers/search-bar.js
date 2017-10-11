@@ -11,6 +11,12 @@ class SearchBar extends Component {
 
   triggerSearch() {
     if(document.getElementById('searchField')) {
+
+      console.log(this.props)
+      if (this.props.displayLanguage) {
+        console.log('LANG', this.props.displayLanguage)
+      }
+
       console.log('Searching...')
 
       let searchTerm = document.getElementById('searchField').value
@@ -19,11 +25,12 @@ class SearchBar extends Component {
       let searchResults// = 'g' //searchDictionaryByWord(searchTerm)
 
       console.log('Before')
+      console.log(this.props)
       let searchResponse = searchDictionaryByWord(searchTerm, this.props.searchDictionary)
       //let searchResponse = 'fire: a flame'
       console.log('After')
 
-      this.props.searchDictionary(searchResponse)
+      //this.props.searchDictionary(searchResponse)
       console.log('after reducer')
       // let url = BASE_API_URL+SEARCH_ENDPOINT+'?q='+searchTerm
       // let xhttp = new XMLHttpRequest();
@@ -46,9 +53,9 @@ class SearchBar extends Component {
 
   render() {
     let mySearchTrigger = this.triggerSearch.bind(this);
+
     return (
       <div id='search'>
-
 
       	<form>
       		<ul>
@@ -84,4 +91,10 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({searchDictionary: searchDictionary}, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(SearchBar);
+function mapStateToProps(state) {
+  return {
+    displayLanguage: state.displayLanguage
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

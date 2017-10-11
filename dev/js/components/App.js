@@ -9,6 +9,7 @@ import CreateEntry from '../containers/create-entry.js'
 {/*import Img from '../../images/placeholder.png'*/}
 import RegistrationForm from '../containers/registration-form';
 import LoginForm from '../containers/login-form';
+import LanguageSwitcher from '../containers/language-switcher'
 
 require('../../css/main.scss');
 
@@ -21,6 +22,9 @@ const App = () => (
         <br/>
     	   <h1>Welcome To Yugur.io</h1>
 
+        <div>
+        <LanguageSwitcher></LanguageSwitcher>
+        </div>
 
         <div className={'account'}>
         <RegistrationForm></RegistrationForm>

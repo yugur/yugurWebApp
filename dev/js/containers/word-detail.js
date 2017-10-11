@@ -24,7 +24,8 @@ class WordDetail extends Component {
 
 function mapStateToProps(state) {
 	return {
-		selectedWord: state.selectedWordEntry
+		selectedWord: state.selectedWordEntry,
+    displayLanguage: state.displayLanguage
 	};
 }
 

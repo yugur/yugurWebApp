@@ -28,23 +28,30 @@ class RegistrationForm extends Component {
 	}
 
   render() {
-      return (
-      	<span>
-      		<h2>Register New User</h2>
-			    <div>
-			      <label>Username:</label>
-			      <input type="text" id='username' name="username" />
-			    </div>
-			    <div>
-			      <label>Password:</label>
-			      <input type="text" id='password' name="password" />
-			    </div>
-				  <button onClick={this.register}>
-	  				Register
-					</button>
-				</span>
-      );
+		
+    return (
+    	<span>
+    		<h2>Register New User</h2>
+		    <div>
+		      <label>Username:</label>
+		      <input type="text" id='username' name="username" />
+		    </div>
+		    <div>
+		      <label>Password:</label>
+		      <input type="text" id='password' name="password" />
+		    </div>
+			  <button onClick={this.register}>
+  				Register
+				</button>
+			</span>
+    );
   }
 }
 
-export default RegistrationForm;
+function mapStateToProps(state) {
+  return {
+    displayLanguage: state.displayLanguage
+  };
+}
+
+export default connect(mapStateToProps)(RegistrationForm);
