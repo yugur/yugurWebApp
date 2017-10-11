@@ -4,10 +4,12 @@ import WordList from '../containers/word-list';
 import WordDetail from '../containers/word-detail'
 import SearchBar from '../containers/search-bar.js'
 import ActionMenu from '../containers/action-menu.js'
+import CreateEntry from '../containers/create-entry.js'
 {/*import MyImage from '../../images/placeholder.png';*/}
 {/*import Img from '../../images/placeholder.png'*/}
 import RegistrationForm from '../containers/registration-form';
 import LoginForm from '../containers/login-form';
+import LanguageSwitcher from '../containers/language-switcher'
 
 require('../../css/main.scss');
 
@@ -19,7 +21,6 @@ const App = () => (
       {/*<div>*/}
         <br/>
     	   <h1>Welcome To Yugur.io</h1>
-
 
         <div className={'account'}>
         <RegistrationForm></RegistrationForm>
@@ -37,12 +38,15 @@ const App = () => (
       <section className={'mainView'}>
 
         {/*<div className={'mainView'}>*/}
+        <div className={'language-switcher'}>
+      <LanguageSwitcher></LanguageSwitcher>
+        </div>
       	<hr/>
 
         <SearchBar></SearchBar>
       	<hr/>
       	<br/>
-
+        
         <div className={'selections'}>
       	<h2 className={'heading'}>Word Entries:</h2>
       	<WordList className={'wordEntry'}></WordList>
@@ -62,9 +66,10 @@ const App = () => (
         {/*</div>*/}
       </section>
 
-      <div className={'mainView'} id={'comments'}>
-
-      </div>
+      <section className={'mainView'} id={'comments'}>
+        <h2 className={'heading'}>Add a Word</h2>
+        <CreateEntry></CreateEntry>
+      </section>
     </div>
 );
 

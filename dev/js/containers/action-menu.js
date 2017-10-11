@@ -15,14 +15,12 @@ class ActionMenu extends Component {
   }
 }
 
-{/*function mapDispatchToProps(dispatch) {
-	return bindActionCreators(null, dispatch)
-}
 
 function mapStateToProps(state) {
 	return {
-		wordEntries: state.wordEntries
+		wordEntries: state.wordEntries,
+    displayLanguage: state.displayLanguage
 	};
-}*/}
+}
 
-export default ActionMenu;
+export default connect(mapStateToProps)(ActionMenu);

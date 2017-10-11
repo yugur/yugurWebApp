@@ -1,5 +1,4 @@
-let request = require('request');
-let {BASE_API_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, STATUS_ENDPOINT, SEARCH_ENDPOINT, FETCH_ENDPOINT} = require('../constants')
+let {BASE_API_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, STATUS_ENDPOINT, SEARCH_ENDPOINT, FETCH_ENDPOINT, ENTRY_ENDPOINT} = require('../constants')
 
 export function getAllWordEntries() {
   let url = BASE_API_URL+FETCH_ENDPOINT
@@ -14,6 +13,23 @@ export function getAllWordEntries() {
   return wordEntries;
 }
 
+export function searchDictionaryByWord(searchTerm, callback) {
+  console.log('Search: ',searchTerm)
+  let url = BASE_API_URL+SEARCH_ENDPOINT+'?q='+searchTerm
+  let type = 'GET'
+
+  let wordEntries = makeRequest(type, url, callback)
+  return wordEntries;
+}
+
+export function searchDictionaryById(entry) {
+  console.log(entry)
+  let url = BASE_API_URL+ENTRY_ENDPOINT+'?='+entry
+  let type = 'GET'
+
+  let entryResult = makeRequest(type, url)
+}
+
 //Calls login endpoint to retrieve auth token, stores token locally
 export function login(uname, password) {
   //TODO
@@ -24,29 +40,93 @@ export function authStatus(auth) {
   //TODO
 }
 
+export function deleteEntry(entry) {
+  console.log('Delete: ', entry)
+  let url = BASE_API_URL+ENTRY_ENDPOINT+'?q='+entry
+  let type = 'DELETE'
+  let result = makeRequest(type, url)
+}
+
+export function createEntry(data) {
+  console.log(data)
+
+  let url = BASE_API_URL+ENTRY_ENDPOINT//+buildCreateQuery(data)
+  let type = 'POST'
+
+  let body = buildCreateBody(data)
+  let result = makeRequest(type, url, null, body)
+}
+
 //retrieves the current auth token from local storage
-getAuthToken() {
+function getAuthToken() {
 
 }
 
+function buildCreateBody(data) {
+  //let queryString = '?'
+
+  let body = {
+    'headword': data.headword,
+    'definition': data.definition,
+    'hw_lang': 'en-AU',
+    'def_lang': 'en-AU',
+    'wordtype': 'noun'
+  }
+  //data.headword ? queryString = queryString + 'headword=' + data.headword : ''
+  //data.definition ? queryString = queryString + '&definition=' + data.definition : ''
+
+  return body
+}
+
  //Makes API requests
-makeRequest(type, url, params) {
+function makeRequest(type, url, callback, body) {
+  console.log(type, url)
+  let xhttp = new XMLHttpRequest();
   switch(type) {
     case 'GET':
-      options = {
-        uri: url,
-        method: type,
-        body: params
+      xhttp.onreadystatechange = function() {
+        console.log('ready state changed')
+        console.log(xhttp)
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(xhttp.responseText)
+          callback(xhttp.responseText)
+          return (JSON.parse(xhttp.responseText))
+        }
       }
-      request.get(options, function(err, resp, body) {
-        console.log('error:', err)
-        return body;
-      })
+      xhttp.open(type, url, true)
+      //xhttp.setRequestHeader('q', searchTerm)
+      console.log(xhttp)
+      xhttp.send();
+      break
     case 'POST':
+      xhttp.onreadystatechange = function() {
+        console.log('ready state changed')
+        console.log(xhttp)
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(xhttp.responseText)
+        }
+      }
+      xhttp.open(type, url, true)
+      //xhttp.setRequestHeader('q', searchTerm)
+      console.log(xhttp)
+      console.log('body: ', body)
+      xhttp.setRequestHeader('Content-type', 'text/plain')
+      xhttp.send(body);
       break;
     case 'PUT':
       break;
     case 'DELETE':
+      xhttp.onreadystatechange = function() {
+        console.log('ready state changed')
+        console.log(xhttp)
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(xhttp.responseText)
+        }
+      }
+      xhttp.open(type, url, true)
+      //xhttp.setRequestHeader('q', searchTerm)
+      console.log(xhttp)
+      xhttp.send();
       break;
   }
 }
