@@ -14,7 +14,7 @@ class RegistrationForm extends Component {
 		let url = 'http://128.199.202.74:8080/register'
 		//let params = 'username='+uname+'&password='+pass
 		let xhttp = new XMLHttpRequest();
-		
+
 
 		xhttp.onreadystatechange = function() {
 			console.log('ready state changed')
