@@ -7,15 +7,20 @@ class WordList extends Component {
 
 	createListItems() {
 		if (this.props.searchResults) {
+			console.log(this.props.searchResults)
 			let searchResults = JSON.parse(this.props.searchResults)
 			console.log(searchResults)
-			return searchResults.map((word) => {
-				return (
-					<li id="entry" key={word.id} onClick={() => this.props.selectWordEntry(word)}>
-						{word.headword}
-					</li>
-				);
-			});
+
+			if (searchResults !== null) {
+				return searchResults.map((word) => {
+					return (
+						<li id="entry" key={word.id} onClick={() => this.props.selectWordEntry(word)}>
+							{word.headword}
+						</li>
+					);
+				});
+			}
+			
 		} else {
 			return (
 				<div>

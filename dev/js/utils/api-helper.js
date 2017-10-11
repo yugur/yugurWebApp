@@ -66,8 +66,11 @@ function buildCreateBody(data) {
   //let queryString = '?'
 
   let body = {
-    headword: data.headword,
-    definition: data.definition
+    'headword': data.headword,
+    'definition': data.definition,
+    'hw_lang': 'en-AU',
+    'def_lang': 'en-AU',
+    'wordtype': 'noun'
   }
   //data.headword ? queryString = queryString + 'headword=' + data.headword : ''
   //data.definition ? queryString = queryString + '&definition=' + data.definition : ''
@@ -107,6 +110,7 @@ function makeRequest(type, url, callback, body) {
       //xhttp.setRequestHeader('q', searchTerm)
       console.log(xhttp)
       console.log('body: ', body)
+      xhttp.setRequestHeader('Content-type', 'application/json')
       xhttp.send(body);
       break;
     case 'PUT':

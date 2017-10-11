@@ -43,7 +43,7 @@ const App = () => (
         <SearchBar></SearchBar>
       	<hr/>
       	<br/>
-        <CreateEntry></CreateEntry>
+        
         <div className={'selections'}>
       	<h2 className={'heading'}>Word Entries:</h2>
       	<WordList className={'wordEntry'}></WordList>
@@ -63,9 +63,10 @@ const App = () => (
         {/*</div>*/}
       </section>
 
-      <div className={'mainView'} id={'comments'}>
-
-      </div>
+      <section className={'mainView'} id={'comments'}>
+        <h2 className={'heading'}>Add a Word</h2>
+        <CreateEntry></CreateEntry>
+      </section>
     </div>
 );
 
