@@ -120,6 +120,8 @@ authSection {
 .wordList li {
 	//color: black;
 	//float: right;
+	height: 100px; /* or any value */
+        overflow-y: auto;
 }
 
 .selections {
