@@ -49,7 +49,9 @@ const App = () => (
         
         <div className={'selections'}>
       	<h2 className={'heading'}>Word Entries:</h2>
-      	<WordList className={'wordEntry'}></WordList>
+        <div className={'wordEntry'}>
+      	 <WordList></WordList>
+        </div>
         </div>
 
 

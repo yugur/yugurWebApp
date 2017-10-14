@@ -131,8 +131,11 @@ authSection {
 	padding-right: 10%;
 	max-width: 400px;
 	//min-width: 300px;
-	height: 100px; /* or any value */
-    	overflow-y: auto;
+}
+
+.wordEntry {
+	height: 110px; /* or any value */
+    overflow-y: auto;
 }
 
 .results {
