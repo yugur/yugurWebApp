@@ -53,13 +53,13 @@ class LoginForm extends Component {
     		<h2>{string_Login}</h2>
 		    <div>
 		      <label>{string_Username}:</label>
-		      <input type="text" id='username' name="username" />
+		      <input type="text" id='username' name="username" disabled/>
 		    </div>
 		    <div>
 		      <label>{string_Password}:</label>
-		      <input type="text" id='password' name="password" />
+		      <input type="text" id='password' name="password" disabled/>
 		    </div>
-			  <button onClick={this.register}>
+			  <button onClick={this.register} disabled>
   				{string_Login}
 				</button>
 				{/*<button onClick={this.getStatus}>

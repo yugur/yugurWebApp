@@ -40,12 +40,12 @@ class CreateEntry extends Component {
     return (
       <section className={'mainView'} id={'comments'}>
         <h2 className={'heading'}>{string_AddAWord}</h2>
-        <div id='createEntry'>
+        <div id='createEntry' data-tip='Disabled'>
           <i>{string_Headword}: </i>
-          <input type='text' id='create_entry_headword' onChange={updateHeadword}/>
+          <input type='text' id='create_entry_headword' onChange={updateHeadword} disabled/>
           <br />
           <i>{string_Definition}: </i>
-          <input type='text' id='create_entry_definition' onChange={updateDefinition}/>
+          <input type='text' id='create_entry_definition' onChange={updateDefinition} disabled/>
           <CreateButton localisation={this.props.localisation} data={formData()}></CreateButton>
         </div>
       </section>
