@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import {getLanguageString} from '../utils/language-helper'
 
 class LoginForm extends Component {
 
@@ -36,25 +37,36 @@ class LoginForm extends Component {
 	}
 
   render() {
-      return (
-      	<span>
-      		<h2>Login</h2>
-			    <div>
-			      <label>Username:</label>
-			      <input type="text" id='username' name="username" />
-			    </div>
-			    <div>
-			      <label>Password:</label>
-			      <input type="text" id='password' name="password" />
-			    </div>
-				  <button onClick={this.register}>
-	  				Login
-					</button>
-					<button onClick={this.getStatus}>
-	  				Status?
-					</button>
-				</span>
-      );
+
+  	//language switching
+    let string_Username = 'Definition'
+    let string_Password = 'Headword'
+    let string_Login = 'Login'
+    if (this.props.displayLanguage) {
+      string_Username = getLanguageString('menu', 'Username', this.props.displayLanguage, this.props.localisation)
+      string_Password = getLanguageString('menu', 'Password', this.props.displayLanguage, this.props.localisation)
+      string_Login = getLanguageString('menu', 'Login', this.props.displayLanguage, this.props.localisation)
+    }
+
+    return (
+    	<span>
+    		<h2>{string_Login}</h2>
+		    <div>
+		      <label>{string_Username}:</label>
+		      <input type="text" id='username' name="username" />
+		    </div>
+		    <div>
+		      <label>{string_Password}:</label>
+		      <input type="text" id='password' name="password" />
+		    </div>
+			  <button onClick={this.register}>
+  				{string_Login}
+				</button>
+				{/*<button onClick={this.getStatus}>
+  				Status?
+				</button>*/}
+			</span>
+    );
   }
 }
 

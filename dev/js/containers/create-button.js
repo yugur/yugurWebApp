@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {selectWordEntry} from '../actions/selectWordEntry'
 import {searchDictionary} from '../actions/searchDictionary'
 import {createEntry} from '../utils/api-helper'
+import {getLanguageString} from '../utils/language-helper'
 let {BASE_API_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, STATUS_ENDPOINT, SEARCH_ENDPOINT, FETCH_ENDPOINT} = require('../constants')
 //import request from 'request'
 
@@ -40,6 +41,13 @@ class CreateButton extends Component {
   }
   
   render() {
+
+    //language switching
+    let string_CreateWord = 'Create Word'
+    if (this.props.displayLanguage) {
+      string_CreateWord = getLanguageString('menu', 'CreateWord', this.props.displayLanguage, this.props.localisation)
+    }
+
     let data = {
       headword: 'newWord',
       definition: 'a job well done'
@@ -49,7 +57,7 @@ class CreateButton extends Component {
 
     return (
       <div id='createEntry'>
-        <button onClick={myCreateTrigger}>Create Word</button>
+        <button onClick={myCreateTrigger}>{string_CreateWord}</button>
       </div>
     )
   }

@@ -72,6 +72,7 @@ function buildCreateBody(data) {
     'def_lang': 'en-AU',
     'wordtype': 'noun'
   }
+  //let body = {"headword":"어느새","wordtype":"부사","definition":"어느 틍에 벌써.","hw_lang":"ko-KR","def_lang":"ko-KR"}
   //data.headword ? queryString = queryString + 'headword=' + data.headword : ''
   //data.definition ? queryString = queryString + '&definition=' + data.definition : ''
 
@@ -106,12 +107,12 @@ function makeRequest(type, url, callback, body) {
           console.log(xhttp.responseText)
         }
       }
-      xhttp.open(type, url, true)
+      xhttp.open(type, url)
       //xhttp.setRequestHeader('q', searchTerm)
-      console.log(xhttp)
-      console.log('body: ', body)
-      xhttp.setRequestHeader('Content-type', 'text/plain')
-      xhttp.send(body);
+      //console.log(xhttp)
+      //console.log('body: ', body)
+      xhttp.setRequestHeader('Content-type', 'application/json')
+      xhttp.send(JSON.stringify(body));
       break;
     case 'PUT':
       break;

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {changeDisplayLanguage} from '../actions/changeDisplayLanguage'
+import {getLanguageString} from '../utils/language-helper'
 
 class LanguageSwitcher extends Component {
 
@@ -19,14 +20,24 @@ class LanguageSwitcher extends Component {
   render() {
       let changeLanguage = this.changeLanguage.bind(this)
 
+      //language switching
+      let string_English = 'English'
+      let string_Chinese = 'Chinese'
+      let string_SelectLanguage = 'Select Language'
+      console.log(this.props)
+      if (this.props.displayLanguage) {
+        string_Chinese = getLanguageString('menu', 'Chinese', this.props.displayLanguage, this.props.localisation)
+        string_English = getLanguageString('menu', 'English', this.props.displayLanguage, this.props.localisation)
+        string_SelectLanguage = getLanguageString('menu', 'SelectLanguage', this.props.displayLanguage, this.props.localisation)
+      }
+
       return (
       	<span>
-      		<h2>Select Language</h2>
+      		<h2>{string_SelectLanguage}</h2>
 			    <div>
             <select id='languageSelecter' name='languages' onChange={changeLanguage}>
-              <option value='english'>English</option>
-              <option value='chinese'>Chinese</option>
-              <option value='yugur'>Yugur</option>
+              <option value='English'>{string_English}</option>
+              <option value='Mandarin'>{string_Chinese}</option>
             </select>
 			    </div>
 				</span>
@@ -38,4 +49,10 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({changeDisplayLanguage: changeDisplayLanguage}, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(LanguageSwitcher);
+function mapStateToProps(state) {
+  return {
+    displayLanguage: state.displayLanguage
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LanguageSwitcher);

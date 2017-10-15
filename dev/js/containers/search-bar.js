@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import {selectWordEntry} from '../actions/selectWordEntry'
 import {searchDictionary} from '../actions/searchDictionary'
 import {searchDictionaryByWord} from '../utils/api-helper'
+import {getLanguageString} from '../utils/language-helper'
+
 let {BASE_API_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, STATUS_ENDPOINT, SEARCH_ENDPOINT, FETCH_ENDPOINT} = require('../constants')
 //import request from 'request'
 
@@ -54,19 +56,37 @@ class SearchBar extends Component {
   render() {
     let mySearchTrigger = this.triggerSearch.bind(this);
 
+    //language switching
+    let string_Search = 'Search'
+    let string_Words = 'Words'
+    let string_Semantics = 'Semantics'
+    let string_Alphabets = 'Alphabets'
+    let string_EnglishToYugur = 'English -> Yugur'
+    let string_YugurToYugur = 'Yugur -> Yugur'
+    let string_ChineseToYugur = 'Chinese -> Yugur'
+    if (this.props.displayLanguage) {
+      string_Search = getLanguageString('menu', 'Search', this.props.displayLanguage, this.props.localisation)
+      string_Words = getLanguageString('menu', 'Words', this.props.displayLanguage, this.props.localisation)
+      string_Semantics = getLanguageString('menu', 'Semantics', this.props.displayLanguage, this.props.localisation)
+      string_Alphabets = getLanguageString('menu', 'Alphabets', this.props.displayLanguage, this.props.localisation)
+      string_EnglishToYugur = getLanguageString('menu', 'DictionarySelection3', this.props.displayLanguage, this.props.localisation)
+      string_ChineseToYugur = getLanguageString('menu', 'DictionarySelection4', this.props.displayLanguage, this.props.localisation)
+      string_YugurToYugur = getLanguageString('menu', 'DictionarySelection1', this.props.displayLanguage, this.props.localisation)
+    }
+
     return (
       <div id='search'>
 
       	<form>
       		<ul>
-            <li>Words</li>
-            <li>Semantics</li>
-            <li>Alphabets</li>
+            <li>{string_Words}</li>
+            <li>{string_Semantics}</li>
+            <li>{string_Alphabets}</li>
             <li>
             <select name='languages'>
-              <option value='yugur'>Yugur -> Yugur</option>
-              <option value='english'>English -> Yugur</option>
-              <option value='chienese'>Chinese -> Yugur</option>
+              <option value='yugur'>{string_YugurToYugur}</option>
+              <option value='english'>{string_EnglishToYugur}</option>
+              <option value='chienese'>{string_ChineseToYugur}</option>
             </select>
 
             </li>
@@ -74,10 +94,10 @@ class SearchBar extends Component {
 
 
 
-      				<input type="text" id="searchField" name="search_word" placeholder="Search" size="48" maxLength="200">
+      				<input type="text" id="searchField" name="search_word" placeholder={string_Search} size="48" maxLength="200">
       			  </input>
       		  </li>
-      		 <li><button type="button" onClick={mySearchTrigger}>Search</button></li>
+      		 <li><button type="button" onClick={mySearchTrigger}>{string_Search}</button></li>
 
       	 </ul>
         </form>

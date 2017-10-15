@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {selectWordEntry} from '../actions/selectWordEntry'
+import {getLanguageString} from '../utils/language-helper'
 
 //let localisation = JSON.parse('../../assets/localisation.json')
 
@@ -10,6 +11,9 @@ import {selectWordEntry} from '../actions/selectWordEntry'
 // request.send(null)
 // let localisation = JSON.parse(request.responseText);
 // console.log(localisation)
+
+let string_WordEntries = 'Word Entries'
+let string_SearchDictionary = 'Search the dictionary'
 
 class WordList extends Component {
 
@@ -32,19 +36,32 @@ class WordList extends Component {
 		} else {
 			return (
 				<div>
-					Search the dictionary..
+					{string_SearchDictionary}
 				</div>
 			)
 		}
 	}
 
   render() {
-  		console.log(this.props)
-      return (
-      	<ul>
-      		{this.createListItems()}
-       	</ul>
-      )
+		console.log(this.props)
+
+		//language switching
+		
+		if (this.props.displayLanguage) {
+		  string_WordEntries = getLanguageString('menu', 'Results', this.props.displayLanguage, this.props.localisation)
+		  string_SearchDictionary = getLanguageString('menu', 'SearchTheDictionary', this.props.displayLanguage, this.props.localisation)
+		}
+
+    return (
+    	<div className={'selections'}>
+      	<h2 className={'heading'}>{string_WordEntries}:</h2>
+        <div className={'wordEntry'}>
+      		<ul>
+    				{this.createListItems()}
+     			</ul>
+        </div>
+      </div>
+    )
   }
 }
 
