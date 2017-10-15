@@ -13,6 +13,9 @@ import LanguageSwitcher from '../containers/language-switcher'
 
 require('../../css/main.scss');
 
+const imgUrl = require(`../../assets/placeholder.png`);
+//require('../../assets/placeholder.png');
+
 const App = () => (
     <div className={'app'}>
 
@@ -46,7 +49,7 @@ const App = () => (
         <SearchBar></SearchBar>
       	<hr/>
       	<br/>
-        
+
         <div className={'selections'}>
       	<h2 className={'heading'}>Word Entries:</h2>
       	<WordList className={'wordEntry'}></WordList>

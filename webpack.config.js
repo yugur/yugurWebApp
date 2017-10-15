@@ -5,7 +5,7 @@ module.exports = {
     devServer: {
         inline: true,
         contentBase: './src',
-        host: '128.199.179.198',
+        //host: '128.199.179.198',
         port: 3000
     },
     devtool: 'cheap-module-eval-source-map',
@@ -20,7 +20,8 @@ module.exports = {
             {
                 test: /\.scss/,
                 loader: 'style-loader!css-loader!sass-loader'
-            }
+            },
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
         ]
     },
     output: {

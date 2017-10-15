@@ -3,7 +3,7 @@ $primary: #006699;
 $banner: #200400;
 
 $entry-hover: #ee4321;
-$bg-img: url('placeholder.png');
+$bg-img: url('../assets/placeholder.png');
 
 /*Styling for general*/
 * {
@@ -28,9 +28,9 @@ header {
 }
 
 body {
-	background: $bckgrd;
-	//background: $bg-img no-repeat;
-	background-size: auto;
+	//background: $bckgrd;
+	background: $bg-img no-repeat;
+	background-size: 100%;
 }
 
 h2 {
@@ -103,7 +103,7 @@ authSection {
 }
 
 .mainView {
-	background-color: rgba(255,255,255,0.9);
+	background-color: rgba(255,255,255,0.8);
 	//height: 100%;
 	padding: 20px;
 	padding-bottom: 90px;
