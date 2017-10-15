@@ -39,8 +39,8 @@ class LoginForm extends Component {
   render() {
 
   	//language switching
-    let string_Username = 'Definition'
-    let string_Password = 'Headword'
+    let string_Username = 'Username'
+    let string_Password = 'Password'
     let string_Login = 'Login'
     if (this.props.displayLanguage) {
       string_Username = getLanguageString('menu', 'Username', this.props.displayLanguage, this.props.localisation)
