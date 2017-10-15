@@ -13,6 +13,7 @@ $bg-img: url('placeholder.png');
 
 html, body {
 	height: 100%;
+	font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -88,8 +89,20 @@ headerLogo {
 
 section {
 	display: auto;
-
+	border-radius: 5px;
 	height: auto;
+}
+
+input {
+	border-radius: 5px;
+}
+
+select {
+	border-radius: 5px;
+}
+
+button {
+	border-radius: 5px
 }
 
 authSection {
@@ -104,7 +117,7 @@ authSection {
 }
 
 .mainView {
-	background-color: rgba(255,255,255,0.9);
+	background-color: rgba(255,255,255,0.8);
 	//height: 100%;
 	padding: 20px;
 	padding-bottom: 90px;
@@ -114,9 +127,8 @@ authSection {
 	margin-right: 20px;
 	margin-bottom: 10px;
 	min-height: 200px;
+	margin-top: 1%;
 }
-
-
 
 .wordList li {
 	//color: black;
