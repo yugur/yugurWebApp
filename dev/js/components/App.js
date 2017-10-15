@@ -20,7 +20,7 @@ let localisation = {
   "menu": {
     "items": [
       {"id": "mainTitle", "English": "Yugur.io", "Mandarin": "裕固语在线词典"},
-      {"id": "AppBanner", "English": "Welcome To Yugur.io", "Mandarin": "欢迎使用裕固语在线词典"},
+      {"id": "AppBanner", "English": "Yugur Online Dictionary", "Mandarin": "欢迎使用裕固语在线词典"},
       {"id": "Results", "English": "Word Entries", "Mandarin": "词条查询结果列表"},
       {"id": "Selections", "English": "Word Details", "Mandarin": "词条释义"},
       {"id": "Login", "English": "Login", "Mandarin": "账号登录"},

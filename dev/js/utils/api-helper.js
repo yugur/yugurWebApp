@@ -15,7 +15,13 @@ export function getAllWordEntries() {
 
 export function searchDictionaryByWord(searchTerm, callback) {
   console.log('Search: ',searchTerm)
-  let url = BASE_API_URL+SEARCH_ENDPOINT+'?q='+searchTerm
+
+  let url
+  if (searchTerm == '') {
+    url = BASE_API_URL+FETCH_ENDPOINT
+  } else {
+    url = BASE_API_URL+SEARCH_ENDPOINT+'?q='+searchTerm
+  }
   let type = 'GET'
 
   let wordEntries = makeRequest(type, url, callback)

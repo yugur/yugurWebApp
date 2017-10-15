@@ -7,7 +7,7 @@ class Heading extends Component {
 
   render() {
   	//language switching
-    let string_WelcomeToYugurio = 'Welcome to Yugur.io'
+    let string_WelcomeToYugurio = 'Yugur Online Dictionary'
     if (this.props.displayLanguage) {
       string_WelcomeToYugurio = getLanguageString('menu', 'AppBanner', this.props.displayLanguage, this.props.localisation)
     }
