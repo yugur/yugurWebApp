@@ -42,7 +42,7 @@ The root React component, ***index.js***, is found here, and loads the parent co
 
 All other components can be found within the ***containers*** folder.
 
-Redux *Actions* and *reducers* can be found in the ***actions*** and ***reducers*** folders, respectively.
+Redux *actions* and *reducers* can be found in the ***actions*** and ***reducers*** folders, respectively.
 
 The project builds into the ***src*** folder found in the root directory. This folder should **never be manually changed**, as this is purely a location for Webpack to bundle the app into.
 
