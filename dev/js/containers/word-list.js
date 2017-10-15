@@ -3,6 +3,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {selectWordEntry} from '../actions/selectWordEntry'
 import {getLanguageString} from '../utils/language-helper'
+import ExportButton from '../containers/export_button'
 
 //let localisation = JSON.parse('../../assets/localisation.json')
 
@@ -52,6 +53,12 @@ class WordList extends Component {
 		  string_SearchDictionary = getLanguageString('menu', 'SearchTheDictionary', this.props.displayLanguage, this.props.localisation)
 		}
 
+		if (this.props.searchResults) {
+			let data = JSON.stringify(this.props.searchResults)
+			let dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(data)
+			let link = document.getElementById('link').href = dataUri
+		}
+
     return (
     	<div className={'selections'}>
       	<h2 className={'heading'}>{string_WordEntries}:</h2>
@@ -60,6 +67,7 @@ class WordList extends Component {
     				{this.createListItems()}
      			</ul>
         </div>
+        <ExportButton localisation={this.props.localisation}/>
       </div>
     )
   }

@@ -52,6 +52,7 @@ let localisation = {
       {"id": "DeleteWord", "English": "Delete Word", "Mandarin": "删除词条"},
       {"id": "SelectAWord", "English": "Select a word", "Mandarin": "选择词条"},
       {"id": "SearchTheDictionary", "English": "Search the dictionary", "Mandarin": "选择词典类型"},
+      {"id": "Export", "English": "Export", "Mandarin": "出口"},
     ]
   }
 }
