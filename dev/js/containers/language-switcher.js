@@ -24,10 +24,12 @@ class LanguageSwitcher extends Component {
       let string_English = 'English'
       let string_Chinese = 'Chinese'
       let string_SelectLanguage = 'Select Language'
+      let string_Korean = 'Korean'
       console.log(this.props)
       if (this.props.displayLanguage) {
         string_Chinese = getLanguageString('menu', 'Chinese', this.props.displayLanguage, this.props.localisation)
         string_English = getLanguageString('menu', 'English', this.props.displayLanguage, this.props.localisation)
+        string_Korean = getLanguageString('menu', 'Korean', this.props.displayLanguage, this.props.localisation)
         string_SelectLanguage = getLanguageString('menu', 'SelectLanguage', this.props.displayLanguage, this.props.localisation)
       }
 
@@ -38,6 +40,7 @@ class LanguageSwitcher extends Component {
             <select id='languageSelecter' name='languages' onChange={changeLanguage}>
               <option value='English'>{string_English}</option>
               <option value='Mandarin'>{string_Chinese}</option>
+              <option value='Korean'>{string_Korean}</option>
             </select>
 			    </div>
 				</span>

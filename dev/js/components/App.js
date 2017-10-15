@@ -53,6 +53,7 @@ let localisation = {
       {"id": "SelectAWord", "English": "Select a word", "Mandarin": "选择词条"},
       {"id": "SearchTheDictionary", "English": "Search the dictionary", "Mandarin": "选择词典类型"},
       {"id": "Export", "English": "Export", "Mandarin": "出口"},
+      {"id": "Korean", "English": "Korean", "Mandarin": "朝鮮的"},
     ]
   }
 }
