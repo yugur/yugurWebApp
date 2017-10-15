@@ -10,8 +10,12 @@ The webapp consists of four primary systems:
 Npm's docs can be found [here](https://docs.npmjs.com/)
 
 ## *Install Process*
+Before starting, ensure you have **Node.js** and **npm** installed. **npm** is bundled with all **Node.js** installations, the latest of which can be found [here](https://nodejs.org/en/)
 
-To get started, first install all the necessary dependencies.
+###### *Note: Node.js and npm are constantly changing, so versions are important. Confirmed working versions of each for this project are __Node.js v6.10.0__ and __npm v3.10.10__. Newer versions should also work, but if in doubt when encountering bugs, fallback to these.*
+
+
+Once your environment is set up, first install all the necessary dependencies.
 ```
 > npm install
 ```
