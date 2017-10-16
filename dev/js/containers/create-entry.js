@@ -15,11 +15,17 @@ class CreateEntry extends Component {
     super()
     this.state = {
       headword: '',
-      definition: ''
+      definition: '',
+      wordType: '',
+      wordLanguage: '',
+      definitionLanguage: ''
     }
 
     updateDefinition = updateDefinition.bind(this)
     updateHeadword = updateHeadword.bind(this)
+    updateWordLanguage = updateWordLanguage.bind(this)
+    updateDefinitionLanguage = updateDefinitionLanguage.bind(this)
+    updateWordType = updateWordType.bind(this)
     formData = formData.bind(this)
   }
   
@@ -30,6 +36,9 @@ class CreateEntry extends Component {
     let string_Headword = 'Headword'
     let string_AddAWord = 'Add a Word'
     let string_CreateWord = 'Create Word'
+    let string_WordType = 'Word Type'
+    let string_WordLanguage = 'Word Language'
+    let string_DefinitionLanguage = 'Word Language'
     if (this.props.displayLanguage) {
       string_Definition = getLanguageString('menu', 'Definition', this.props.displayLanguage, this.props.localisation)
       string_Headword = getLanguageString('menu', 'Headword', this.props.displayLanguage, this.props.localisation)
@@ -42,10 +51,20 @@ class CreateEntry extends Component {
         <h2 className={'heading'}>{string_AddAWord}</h2>
         <div id='createEntry' data-tip='Disabled'>
           <i>{string_Headword}: </i>
-          <input type='text' id='create_entry_headword' onChange={updateHeadword} disabled/>
+          <input type='text' id='create_entry_headword' onChange={updateHeadword} />
           <br />
           <i>{string_Definition}: </i>
-          <input type='text' id='create_entry_definition' onChange={updateDefinition} disabled/>
+          <input type='text' id='create_entry_definition' onChange={updateDefinition} />
+          <br />
+          <br />
+          <i>{string_WordType}: </i>
+          <input type='text' id='create_entry_wordType' onChange={updateWordType} />
+          <br />
+          <i>{string_WordLanguage}: </i>
+          <input type='text' id='create_entry_wordLanguage' onChange={updateWordLanguage} />
+          <br />
+          <i>{string_DefinitionLanguage}: </i>
+          <input type='text' id='create_entry_definitionLanguage' onChange={updateDefinitionLanguage} />
           <CreateButton localisation={this.props.localisation} data={formData()}></CreateButton>
         </div>
       </section>
@@ -69,10 +88,37 @@ function updateDefinition() {
   })
 }
 
+function updateWordType() {
+  let definition = document.getElementById('create_entry_wordType').value
+
+  this.setState({
+    wordType: definition
+  })
+}
+
+function updateWordLanguage() {
+  let definition = document.getElementById('create_entry_wordLanguage').value
+
+  this.setState({
+    wordLanguage: definition
+  })
+}
+
+function updateDefinitionLanguage() {
+  let definition = document.getElementById('create_entry_definitionLanguage').value
+
+  this.setState({
+    definitionLanguage: definition
+  })
+}
+
 function formData() {
   let data = {
     headword: this.state.headword,
-    definition: this.state.definition
+    definition: this.state.definition,
+    wordLanguage: this.state.wordLanguage,
+    definitionLanguage: this.state.definitionLanguage,
+    wordType: this.state.wordType
   }
 
   return data

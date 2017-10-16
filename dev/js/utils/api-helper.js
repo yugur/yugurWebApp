@@ -1,3 +1,4 @@
+import $ from 'jquery'
 let {BASE_API_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, STATUS_ENDPOINT, SEARCH_ENDPOINT, FETCH_ENDPOINT, ENTRY_ENDPOINT} = require('../constants')
 
 export function getAllWordEntries() {
@@ -56,11 +57,16 @@ export function deleteEntry(entry) {
 export function createEntry(data) {
   console.log(data)
 
+
+
   let url = BASE_API_URL+ENTRY_ENDPOINT//+buildCreateQuery(data)
   let type = 'POST'
 
   let body = buildCreateBody(data)
-  let result = makeRequest(type, url, null, body)
+  console.log(url, body)
+  //let result = makeRequest(type, url, null, JSON.stringify(body))
+
+  $.post(url, JSON.stringify(body))
 }
 
 //retrieves the current auth token from local storage
@@ -74,11 +80,11 @@ function buildCreateBody(data) {
   let body = {
     'headword': data.headword,
     'definition': data.definition,
-    'hw_lang': 'en-AU',
-    'def_lang': 'en-AU',
-    'wordtype': 'noun'
+    'hw_lang': data.wordLanguage,
+    'def_lang': data.definitionLanguage,
+    'wordtype': data.wordType
   }
-  //let body = {"headword":"어느새","wordtype":"부사","definition":"어느 틍에 벌써.","hw_lang":"ko-KR","def_lang":"ko-KR"}
+  //let body = {"headword":"deleteMe","wordtype":"noun","definition":"to be deleted","hw_lang":"ko-KR","def_lang":"ko-KR"}
   //data.headword ? queryString = queryString + 'headword=' + data.headword : ''
   //data.definition ? queryString = queryString + '&definition=' + data.definition : ''
 

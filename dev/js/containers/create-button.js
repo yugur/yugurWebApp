@@ -57,7 +57,7 @@ class CreateButton extends Component {
 
     return (
       <div id='createEntry'>
-        <button onClick={myCreateTrigger} disabled>{string_CreateWord}</button>
+        <button onClick={myCreateTrigger}>{string_CreateWord}</button>
       </div>
     )
   }
