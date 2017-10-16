@@ -53,6 +53,13 @@ let localisation = {
       {"id": "SelectAWord", "English": "Select a word", "Mandarin": "选择词条"},
       {"id": "SearchTheDictionary", "English": "Search the dictionary", "Mandarin": "选择词典类型"},
       {"id": "Export", "English": "Export", "Mandarin": "出口"},
+      {"id": "WordType", "English": "Word Type", "Mandarin": "词性"},
+      {"id": "WordLanguage", "English": "Word Language", "Mandarin": "单词源语言"},
+      {"id": "DefinitionLanguage", "English": "Definition Language", "Mandarin": "单词释义源语言"},
+
+      {"id": "Noun", "English": "Noun", "Mandarin": "名詞"},
+      {"id": "Adjective", "English": "Adjective", "Mandarin": "形容詞"},
+      {"id": "Verb", "English": "Verb", "Mandarin": "動詞"}
     ]
   }
 }

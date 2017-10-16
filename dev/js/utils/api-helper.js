@@ -55,9 +55,8 @@ export function deleteEntry(entry) {
 }
 
 export function createEntry(data) {
+  //using ajax for this one because of an unresolved error using xmlHttpRequest
   console.log(data)
-
-
 
   let url = BASE_API_URL+ENTRY_ENDPOINT//+buildCreateQuery(data)
   let type = 'POST'
@@ -67,6 +66,17 @@ export function createEntry(data) {
   //let result = makeRequest(type, url, null, JSON.stringify(body))
 
   $.post(url, JSON.stringify(body))
+}
+
+export function updateEntry(data) {
+  console.log(data)
+
+  let url = BASE_API_URL+ENTRY_ENDPOINT
+  let type = 'POST'
+
+  console.log(url, data)
+
+  $.post(url, JSON.stringify(data))
 }
 
 //retrieves the current auth token from local storage

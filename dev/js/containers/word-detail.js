@@ -12,13 +12,13 @@ class WordDetail extends Component {
     let string_Language = 'Language'
     let string_WordDetails = 'Word Details'
     let string_DeleteWord = 'Delete Word'
-    let string_SelectWord = 'Select a word'
+    let string_SelectAWord = 'Select a word'
     if (this.props.displayLanguage) {
       string_Definition = getLanguageString('menu', 'Definition', this.props.displayLanguage, this.props.localisation)
       string_Language = getLanguageString('menu', 'Language', this.props.displayLanguage, this.props.localisation)
       string_WordDetails = getLanguageString('menu', 'Selections', this.props.displayLanguage, this.props.localisation)
       string_DeleteWord = getLanguageString('menu', 'DeleteWord', this.props.displayLanguage, this.props.localisation)
-      string_SelectWord = getLanguageString('menu', 'SelectAWord', this.props.displayLanguage, this.props.localisation)
+      string_SelectAWord = getLanguageString('menu', 'SelectAWord', this.props.displayLanguage, this.props.localisation)
     }
 
     console.log(this.props.selectedWord)
@@ -26,7 +26,7 @@ class WordDetail extends Component {
       return (
         <div className={'results'}>
           <h2>{string_WordDetails}:</h2>
-          <h4>{string_SelectWord}</h4>
+          <h4>{string_SelectAWord}</h4>
         </div>
       )
     }
