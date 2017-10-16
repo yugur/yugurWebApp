@@ -16,9 +16,9 @@ class CreateEntry extends Component {
     this.state = {
       headword: '',
       definition: '',
-      wordType: '',
-      wordLanguage: '',
-      definitionLanguage: ''
+      wordType: 'noun',
+      wordLanguage: 'en-AU',
+      definitionLanguage: 'en-AU'
     }
 
     updateDefinition = updateDefinition.bind(this)
